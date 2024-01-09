@@ -1,11 +1,7 @@
 "use client";
-import Image from "next/image";
 import { NextUIProvider } from "@nextui-org/react";
-// import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { config as particlesConfig } from "./configs/particlesjs-config";
-import { loadSlim } from "@tsparticles/slim";
-import { BaseButton } from "./components/button";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { MyNavbar } from "./components/Navbar";
 import { HomePage } from "./Home/home";
 import Footer from "./components/Footer";
@@ -28,9 +24,7 @@ export default function Home() {
       <NextUIProvider>
         <ThemeProvider>
           <main className="p-2">
-            {<Particles options={particlesConfig} />}
-
-            {/* <main className="flex min-h-screen flex-col items-center justify-between "> */}
+            {init && <Particles options={particlesConfig} />}
             <MyNavbar />
             <div className="px-10" style={{ backgroundColor: "transparent" }}>
               <HomePage />
