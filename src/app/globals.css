@@ -6,17 +6,21 @@
   --background:transparent;
   --dark: #d3d3d3;
   --primary: #22A39F;
-  --secondary: black;
+  --secondary: #F3EFE0;
   --error: rgb(221, 15, 15);
 }
 
-[data-theme="dark"] {
+*{
+  color: white;
+}
 
-  --background:transparent;
-  --dark: #242323;
-  --primary: #205E61;
-  --secondary: #F3EFE0;
-
+.color {
+  border-radius: 100%;
+  margin: 0 auto;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  width: 12px;
+  height: 12px;
 }
 
 body {
@@ -47,27 +51,3 @@ input {
 .t-primary{
   color: var(--primary);
 }
-
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */

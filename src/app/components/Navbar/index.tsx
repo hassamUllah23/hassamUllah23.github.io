@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Link,
   Button,
-  Switch,
+  NavbarMenu,
+  NavbarMenuItem,
+  NavbarMenuToggle,
 } from "@nextui-org/react";
 import { Sacramento } from "next/font/google";
-import { MoonIcon } from "./moon";
-import { SunIcon } from "./sun";
-import { useTheme } from 'next-themes'
+import { Scroll } from "../Scroll";
+import { ThemeSelector } from "../ThemeSelector";
 
 const sacremento = Sacramento({
   weight: "400",
@@ -19,43 +19,68 @@ const sacremento = Sacramento({
 });
 
 function MyNavbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuItems: Array<{ label: string; target: string }> = [
+    {
+      label: "Experience",
+      target: "experience",
+    },
+    {
+      label: "Projects",
+      target: "projects",
+    },
+    {
+      label: "Connect",
+      target: "contact",
+    },
+  ];
 
-  const { theme, setTheme } = useTheme()
-
-  const toggleDarkMode = (isSelected:boolean)=>{
-    setTheme( isSelected ? 'dark' : 'light')
-  }
   return (
-    <Navbar style={{backgroundColor:'transparent'}}>
+    <Navbar
+      style={{ backgroundColor: "transparent" }}
+      onMenuOpenChange={setIsMenuOpen}
+      shouldHideOnScroll
+    >
+      <NavbarMenuToggle
+        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        className="sm:hidden"
+      />
       <NavbarBrand className={`${sacremento.className}`}>
         <h1 className="font-bold">Hassam Ullah</h1>
       </NavbarBrand>
-      <NavbarContent className="" justify="end">
-        <Switch
-          defaultSelected
-          onValueChange={toggleDarkMode}
-          size="sm"
-          color="default"
-          startContent={<SunIcon />}
-          endContent={<MoonIcon />}
-        />
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Projects
-          </Link>
-        </NavbarItem>
-        {/* <NavbarItem isActive> */}
-        <NavbarItem>
-          <Link href="#" color="foreground" aria-current="page">
-            Experience
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Connect
-          </Button>
-        </NavbarItem>
+      <NavbarContent className="hidden sm:flex flex-1" justify="center">
+        {menuItems.map((element, index) => {
+          {
+            return (
+              <Scroll key={index} target={element.target}>
+                <NavbarItem>
+                  <span className="text-primary font-semibold">
+                    {element.label}
+                  </span>
+                </NavbarItem>
+              </Scroll>
+            );
+          }
+        })}
       </NavbarContent>
+      <NavbarContent justify="end">
+        <ThemeSelector />
+        <Scroll target={"contact"}>
+          <NavbarItem>
+            <Button color="default" variant="shadow">
+              Get in touch
+            </Button>
+          </NavbarItem>
+        </Scroll>
+      </NavbarContent>
+
+      <NavbarMenu>
+        {menuItems.map((item, index) => (
+          <Scroll key={index} target={item.target}>
+            <NavbarMenuItem>{item.label}</NavbarMenuItem>
+          </Scroll>
+        ))}
+      </NavbarMenu>
     </Navbar>
   );
 }

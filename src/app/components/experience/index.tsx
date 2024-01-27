@@ -1,22 +1,17 @@
+import React, { useEffect } from "react";
 import ScrollContainer from "@/app/components/ScrollContainer";
-import {
-  codegenio_logo,
-  khive_logo,
-  protvoid_logo,
-  softteams_logo,
-} from "@/app/services/assets.service";
-import React from "react";
 import { Chrono, TimelineItem } from "react-chrono";
+import { useTheme } from "next-themes";
+import { resolveColor, resolveTheme } from "@/app/utils";
 
 type Props = {};
 
-export default function Experience({}: Props) {
+function Experience({}: Props) {
   const items: Array<TimelineItem> = [
     {
-      title: "March 1st, 2022 - Joined Codegenio",
+      title: "March 1st, 2022",
       cardTitle: "Codegenio",
       url: "https://www.linkedin.com/company/codinggenio/about/",
-      // date:"2023-01-05",
       cardSubtitle:
         "My first professional employment. Got to learn the importance of teamwork and trusting your peers to ensure achieving work-related milestones on time. Also learnt the importance of staying true to the standard practices in coding and overall work management.",
       cardDetailedText: [
@@ -24,12 +19,6 @@ export default function Experience({}: Props) {
         "- Learnt to utilize DevTools to maximize productivity.",
         "- Learnt Angular-Marerial and Ngx-Bootstrap modules for UI.",
       ],
-      media: {
-        type: "IMAGE",
-        source: {
-          url: codegenio_logo.src,
-        },
-      },
     },
 
     {
@@ -46,12 +35,6 @@ export default function Experience({}: Props) {
         "- Learnt deployment on AWS and DigitalOcean Instances.",
         "- Learnt AWS S3 service for file storage.",
       ],
-      media: {
-        type: "IMAGE",
-        source: {
-          url: protvoid_logo.src,
-        },
-      },
     },
 
     {
@@ -61,12 +44,6 @@ export default function Experience({}: Props) {
       cardSubtitle:
         "A services-based software development company with its primary focus around Web3 solutions, ranging from NFT Marketplace, to a Multi-Chain NFT Bridge.",
       cardDetailedText: [],
-      media: {
-        type: "IMAGE",
-        source: {
-          url: khive_logo.src,
-        },
-      },
     },
 
     {
@@ -76,43 +53,39 @@ export default function Experience({}: Props) {
       cardSubtitle:
         "A services-based software development firm with its main focus on web development, specifically in elixir.",
       cardDetailedText: ["- I learned nest", "- I learned nest"],
-      media: {
-        type: "IMAGE",
-        source: {
-          url: softteams_logo.src,
-        },
-      },
     },
   ];
+
+  const { theme } = useTheme();
+
+  useEffect(() => {}, [theme]);
   return (
-    <>
+    <div id="experience">
       <ScrollContainer>
         <div style={{ width: "100%", height: "100%" }}>
           <Chrono
-            items={items}
             mode={"VERTICAL_ALTERNATING"}
-            slideItemDuration={3000}
+            items={items}
             theme={{
+              color: "white",
               primary: "white",
-              secondary: "lightgreen",
-              cardBgColor: "whitesmoke",
-              titleColor: "green",
-              cardTitleColor: "green",
-              titleColorActive: "white",
+              secondary: "white",
+              cardBgColor: "white",
+              titleColor: resolveColor(resolveTheme(theme)),
+              cardTitleColor: resolveColor(resolveTheme(theme)),
+              cardSubtitleColor: "black",
+              cardContentColor: "black",
+              cardDetailsColor: "black",
               cardHeight: "100px",
             }}
-            allowDynamicUpdates
-            enableDarkToggle
-            enableOutline
-            slideShow
-          >
-            <div className="chrono-icons">
-              <img src="image1.svg" alt="image1" />
-              <img src="image2.svg" alt="image2" />
-            </div>
-          </Chrono>
+            activeItemIndex={-1}
+            borderLessCards={true}
+            hideControls
+          ></Chrono>
         </div>
       </ScrollContainer>
-    </>
+    </div>
   );
 }
+
+export { Experience };

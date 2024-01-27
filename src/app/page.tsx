@@ -1,38 +1,67 @@
 "use client";
-import { NextUIProvider } from "@nextui-org/react";
-import { config as particlesConfig } from "./configs/particlesjs-config";
+
 import { useEffect, useState } from "react";
-import { MyNavbar } from "./components/Navbar";
-import { HomePage } from "./Home/home";
-import Footer from "./components/Footer";
-import { ThemeProvider } from "next-themes";
-import { loadFull } from "tsparticles";
+import { NextUIProvider } from "@nextui-org/react";
+import { Inter } from "next/font/google";
+import {
+  MyNavbar,
+  Experience,
+  Footer,
+  Intro,
+  Projects,
+  Counts,
+  Skills,
+} from "./components";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadFull } from "tsparticles";
+import { darkConfig } from "./configs/particles.config";
+import { ThemeProvider, useTheme } from "next-themes";
+import { ThemesEnum } from "./utils";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const { theme } = useTheme();
+
   const [init, setInit] = useState(false);
-  // this should be run only once per application lifetime
   useEffect(() => {
+    let body = document.querySelector("body");
+    if (body) {
+      // body.setAttribute("data-theme", "ghost");
+      body.style.backgroundColor = "transparent";
+    }
     initParticlesEngine(async (engine) => {
       await loadFull(engine, true);
     }).then(() => {
       setInit(true);
     });
   }, []);
+
+  useEffect(() => {
+    console.info("THEME CHANGED");
+  }, [theme]);
   return (
-    <div>
+    <ThemeProvider themes={Array.from(Object.values(ThemesEnum))}>
       <NextUIProvider>
-        <ThemeProvider>
-          <main className="p-2">
-            {init && <Particles options={particlesConfig} />}
-            <MyNavbar />
-            <div className="px-10" style={{ backgroundColor: "transparent" }}>
-              <HomePage />
-            </div>
-            <Footer />
-          </main>
-        </ThemeProvider>
+        <main
+          className={`p-2 ${inter.className} ${theme}`}
+          style={{ backgroundColor: "transparent" }}
+        >
+          <MyNavbar />
+          <div
+            className="px-3 sm:px-5 md:px-10"
+            style={{ backgroundColor: "transparent" }}
+          >
+            {init && <Particles {...darkConfig} />}
+            <Intro />
+            <Counts />
+            <Skills />
+            <Projects />
+            <Experience />
+          </div>
+          <Footer />
+        </main>
       </NextUIProvider>
-    </div>
+    </ThemeProvider>
   );
 }
