@@ -24,14 +24,14 @@ function FooterTechnologies({}: Props) {
         <p className={`text-sm ${orbitron.className}`}>AND</p>
       </div>
 
-      <div className="flex flex-row items-center justify-center w-full flex-wrap md:flex-nowrap gap-3 my-4">
+      <div className="flex flex-row items-center justify-center w-full flex-wrap md:flex-nowrap gap-1 sm:gap-3 my-2 sm:my-4">
         {technologies.map((technology, index) => {
           return (
             <div key={index}>
               <Chip
                 variant="bordered"
                 radius="md"
-                className="whitespace-nowrap"
+                className="whitespace-nowrap text-[10px] sm:text-sm"
               >
                 {technology}
               </Chip>

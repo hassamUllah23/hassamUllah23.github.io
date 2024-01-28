@@ -17,7 +17,7 @@ function Popup({ triggerComponent, children }: Props & PropsWithChildren) {
       >
         <PopoverTrigger>{triggerComponent}</PopoverTrigger>
         <PopoverContent
-          className="w-max p-0 m-0"
+          className="w-max"
           style={{ backgroundColor: "transparent" }}
         >
           {children}

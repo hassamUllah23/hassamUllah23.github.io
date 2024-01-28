@@ -1,6 +1,6 @@
 import React from "react";
 import { ProjectItem } from "./ProjectItem";
-import { picture, telegram, xp_bridge_1 } from "@/app/services/assets.service";
+import { telegram, xp_bridge_1 } from "@/app/services/assets.service";
 import { Project, TechnologiesEnum } from "@/app/utils";
 import { Element } from "react-scroll";
 
@@ -26,96 +26,9 @@ export function Projects({}: Props) {
         TechnologiesEnum.node,
         TechnologiesEnum.ethereum,
       ],
-      images: [picture.src],
+      images: [xp_bridge_1.src],
     },
 
-    {
-      title: "Telegram",
-      subtitle:
-        "A ChatGPT-based conversation generation tool for Telegram. A ChatGPT-based conversation generation tool for Telegram. A ChatGPT-based conversation generation tool for Telegram.",
-      description:
-        "A browser-based user interface that generates conversations through ChatGPT and populates them in Telegram chat groups using TelegramBot API and Puppeteer. A browser-based user interface that generates conversations through ChatGPT and populates them in Telegram chat groups using TelegramBot API and Puppeteer. A browser-based user interface that generates conversations through ChatGPT and populates them in Telegram chat groups using TelegramBot API and Puppeteer.",
-      cover: telegram.src,
-      url: "",
-      technologies: [
-        TechnologiesEnum.react,
-        TechnologiesEnum.vite,
-        TechnologiesEnum.redux,
-        TechnologiesEnum.node,
-        TechnologiesEnum.mongo,
-        TechnologiesEnum.docker,
-        TechnologiesEnum.aws_ec2,
-        TechnologiesEnum.socket,
-        TechnologiesEnum.pm2,
-        TechnologiesEnum.chatGpt,
-        TechnologiesEnum.puppeteer,
-        TechnologiesEnum.telegram,
-      ],
-      primaryTechnologies: [
-        TechnologiesEnum.react,
-        TechnologiesEnum.node,
-        TechnologiesEnum.mongo,
-      ],
-      images: [],
-    },
-    {
-      title: "Telegram",
-      subtitle:
-        "A ChatGPT-based conversation generation tool for Telegram. A ChatGPT-based conversation generation tool for Telegram. A ChatGPT-based conversation generation tool for Telegram.",
-      description:
-        "A browser-based user interface that generates conversations through ChatGPT and populates them in Telegram chat groups using TelegramBot API and Puppeteer. A browser-based user interface that generates conversations through ChatGPT and populates them in Telegram chat groups using TelegramBot API and Puppeteer. A browser-based user interface that generates conversations through ChatGPT and populates them in Telegram chat groups using TelegramBot API and Puppeteer.",
-      cover: telegram.src,
-      url: "",
-      technologies: [
-        TechnologiesEnum.react,
-        TechnologiesEnum.vite,
-        TechnologiesEnum.redux,
-        TechnologiesEnum.node,
-        TechnologiesEnum.mongo,
-        TechnologiesEnum.docker,
-        TechnologiesEnum.aws_ec2,
-        TechnologiesEnum.socket,
-        TechnologiesEnum.pm2,
-        TechnologiesEnum.chatGpt,
-        TechnologiesEnum.puppeteer,
-        TechnologiesEnum.telegram,
-      ],
-      primaryTechnologies: [
-        TechnologiesEnum.react,
-        TechnologiesEnum.node,
-        TechnologiesEnum.mongo,
-      ],
-      images: [],
-    },
-    {
-      title: "Telegram",
-      subtitle:
-        "A ChatGPT-based conversation generation tool for Telegram. A ChatGPT-based conversation generation tool for Telegram. A ChatGPT-based conversation generation tool for Telegram.",
-      description:
-        "A browser-based user interface that generates conversations through ChatGPT and populates them in Telegram chat groups using TelegramBot API and Puppeteer. A browser-based user interface that generates conversations through ChatGPT and populates them in Telegram chat groups using TelegramBot API and Puppeteer. A browser-based user interface that generates conversations through ChatGPT and populates them in Telegram chat groups using TelegramBot API and Puppeteer.",
-      cover: telegram.src,
-      url: "",
-      technologies: [
-        TechnologiesEnum.react,
-        TechnologiesEnum.vite,
-        TechnologiesEnum.redux,
-        TechnologiesEnum.node,
-        TechnologiesEnum.mongo,
-        TechnologiesEnum.docker,
-        TechnologiesEnum.aws_ec2,
-        TechnologiesEnum.socket,
-        TechnologiesEnum.pm2,
-        TechnologiesEnum.chatGpt,
-        TechnologiesEnum.puppeteer,
-        TechnologiesEnum.telegram,
-      ],
-      primaryTechnologies: [
-        TechnologiesEnum.react,
-        TechnologiesEnum.node,
-        TechnologiesEnum.mongo,
-      ],
-      images: [],
-    },
     {
       title: "Telegram",
       subtitle:
@@ -151,11 +64,11 @@ export function Projects({}: Props) {
     <Element name="projects">
       <div
         id="projects"
-        className="flex flex-row justify-center items-stretch flex-wrap py-1"
+        className="flex flex-row justify-center items-stretch flex-wrap py-1 gap-3"
       >
         {projects.map((project, index) => {
           return (
-            <div className="w-full sm:w-1/3 md:w-1/3">
+            <div className="w-full sm:w-1/3 md:w-1/4">
               <ProjectItem key={index} {...project} />
             </div>
           );

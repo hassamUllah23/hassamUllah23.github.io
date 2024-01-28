@@ -1,4 +1,3 @@
-import { resolveColor, resolveTheme } from "@/app/utils";
 import { Progress } from "@nextui-org/react";
 import { useTheme } from "next-themes";
 import React, { useEffect } from "react";
@@ -20,9 +19,7 @@ function Skill({ label, value }: SkillProps) {
       label={label}
       size="sm"
       showValueLabel={true}
-      className="p-5"
-      // style={{ color: resolveColor(resolveTheme(theme)) }}
-      style={{ color: "currentcolor", fill: "currentcolor" }}
+      className=" text-white my-3"
     />
   );
 }

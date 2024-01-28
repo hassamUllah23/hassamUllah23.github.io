@@ -7,12 +7,7 @@ type Props = {
 
 function MyTooltip({ text, children }: Props & PropsWithChildren) {
   return (
-    <Tooltip
-      placement="bottom"
-      className="text-black"
-      content={text}
-      style={{ backgroundColor: "black", color: "black" }}
-    >
+    <Tooltip placement="bottom" content={text}>
       {children}
     </Tooltip>
   );

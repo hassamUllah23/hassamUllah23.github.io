@@ -16,8 +16,8 @@ export function Technologies({ justify, technologies }: Props) {
         return (
           <Chip
             key={index}
-            color="primary"
-            variant="dot"
+            color="default"
+            variant="bordered"
             style={{ fontSize: "10px", padding: "3px" }}
           >
             {element}

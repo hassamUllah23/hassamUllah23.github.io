@@ -11,7 +11,7 @@ import {
 } from "@nextui-org/react";
 import { Sacramento } from "next/font/google";
 import { Scroll } from "../Scroll";
-import { ThemeSelector } from "../ThemeSelector";
+// import { ThemeSelector } from "../ThemeSelector";
 
 const sacremento = Sacramento({
   weight: "400",
@@ -54,7 +54,7 @@ function MyNavbar() {
             return (
               <Scroll key={index} target={element.target}>
                 <NavbarItem>
-                  <span className="text-primary font-semibold">
+                  <span className="text-white font-semibold">
                     {element.label}
                   </span>
                 </NavbarItem>
@@ -64,10 +64,10 @@ function MyNavbar() {
         })}
       </NavbarContent>
       <NavbarContent justify="end">
-        <ThemeSelector />
+        {/* <ThemeSelector /> */}
         <Scroll target={"contact"}>
           <NavbarItem>
-            <Button color="default" variant="shadow">
+            <Button color="default" variant="flat">
               Get in touch
             </Button>
           </NavbarItem>

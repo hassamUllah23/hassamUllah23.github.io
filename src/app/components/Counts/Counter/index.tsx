@@ -11,7 +11,7 @@ function Coutner({ limit, duration }: Props) {
     <CountUp
       start={0}
       end={limit}
-      duration={5}
+      duration={3}
       useEasing
       enableScrollSpy
       scrollSpyDelay={300}

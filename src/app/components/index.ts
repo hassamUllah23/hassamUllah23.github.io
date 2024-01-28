@@ -11,7 +11,6 @@ import { Counts } from "./Counts";
 import { Skills } from "./Skills";
 import { Contact } from "./Contact";
 
-
 export {
   MyNavbar,
   Intro,
@@ -24,5 +23,5 @@ export {
   MyTooltip,
   Counts,
   Skills,
-  Contact
+  Contact,
 };

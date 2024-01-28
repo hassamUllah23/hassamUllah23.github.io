@@ -1,89 +1,108 @@
-import React, { useEffect } from "react";
-import ScrollContainer from "@/app/components/ScrollContainer";
-import { Chrono, TimelineItem } from "react-chrono";
-import { useTheme } from "next-themes";
-import { resolveColor, resolveTheme } from "@/app/utils";
+import * as React from "react";
+import Timeline from "@mui/lab/Timeline";
+import TimelineItem from "@mui/lab/TimelineItem";
+import TimelineSeparator from "@mui/lab/TimelineSeparator";
+import TimelineConnector from "@mui/lab/TimelineConnector";
+import TimelineContent from "@mui/lab/TimelineContent";
+import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
+import TimelineDot from "@mui/lab/TimelineDot";
+import LaptopMacIcon from "@mui/icons-material/LaptopMac";
+import Typography from "@mui/material/Typography";
+import { Element } from "react-scroll";
+import Link from "next/link";
 
 type Props = {};
 
+type TimeLineData = {
+  date: string;
+  company: string;
+  subtitle: string;
+  bullets: Array<string>;
+  url: string;
+};
+
 function Experience({}: Props) {
-  const items: Array<TimelineItem> = [
+  const items: Array<TimeLineData> = [
     {
-      title: "March 1st, 2022",
-      cardTitle: "Codegenio",
+      date: "March 1st, 2022",
+      company: "Codegenio",
       url: "https://www.linkedin.com/company/codinggenio/about/",
-      cardSubtitle:
+      subtitle:
         "My first professional employment. Got to learn the importance of teamwork and trusting your peers to ensure achieving work-related milestones on time. Also learnt the importance of staying true to the standard practices in coding and overall work management.",
-      cardDetailedText: [
-        "- Wrote and maintained TypeScript code for full-scale Angular projects.",
-        "- Learnt to utilize DevTools to maximize productivity.",
-        "- Learnt Angular-Marerial and Ngx-Bootstrap modules for UI.",
+      bullets: [
+        "Wrote and maintained TypeScript code for full-scale Angular projects.",
+        "Learnt to utilize DevTools to maximize productivity.",
+        "Learnt Angular-Marerial and Ngx-Bootstrap modules for UI.",
       ],
     },
 
     {
-      title: "July 1st, 2022",
-      cardTitle: "Joined Protovoid Technologies",
+      date: "July 1st, 2022",
+      company: "Joined Protovoid Technologies",
       url: "https://protovoid.com/",
-      cardSubtitle:
+      subtitle:
         "A services-based software development firm with its main focus on web development, specifically in elixir.",
-      cardDetailedText: [
-        "- Built deployment-ready back-end with Nestjs and Nodejs",
-        "- Learnt Docker basics to utilize containerization for CI/CD.",
-        "- Learnt to integrate Stripe and PayPal payment gateway to enable in-app-payments.",
-        "- Learnt to use GitHub web and desktop clients to maintain and re-use code effectively.",
-        "- Learnt deployment on AWS and DigitalOcean Instances.",
-        "- Learnt AWS S3 service for file storage.",
+      bullets: [
+        "Built deployment-ready back-end with Nestjs and Nodejs",
+        "Learnt Docker basics to utilize containerization for CI/CD.",
+        "Learnt to integrate Stripe and PayPal payment gateway to enable in-app-payments.",
+        "Learnt to use GitHub web and desktop clients to maintain and re-use code effectively.",
+        "Learnt deployment on AWS and DigitalOcean Instances.",
+        "Learnt AWS S3 service for file storage.",
       ],
     },
 
     {
-      title: "January 1st, 2023",
-      cardTitle: "Joined Krypto-Hive",
+      date: "January 1st, 2023",
+      company: "Joined Krypto-Hive",
       url: "https://kryptohive.com/",
-      cardSubtitle:
+      subtitle:
         "A services-based software development company with its primary focus around Web3 solutions, ranging from NFT Marketplace, to a Multi-Chain NFT Bridge.",
-      cardDetailedText: [],
+      bullets: [],
     },
 
     {
-      title: "January 1st, 2024",
-      cardTitle: "Joined Softteams a/s",
+      date: "January 1st, 2024",
+      company: "Joined Softteams a/s",
       url: "http://www.softteams.com/",
-      cardSubtitle:
+      subtitle:
         "A services-based software development firm with its main focus on web development, specifically in elixir.",
-      cardDetailedText: ["- I learned nest", "- I learned nest"],
+      bullets: ["I learned nest", "I learned nest"],
     },
   ];
 
-  const { theme } = useTheme();
-
-  useEffect(() => {}, [theme]);
   return (
     <div id="experience">
-      <ScrollContainer>
-        <div style={{ width: "100%", height: "100%" }}>
-          <Chrono
-            mode={"VERTICAL_ALTERNATING"}
-            items={items}
-            theme={{
-              color: "white",
-              primary: "white",
-              secondary: "white",
-              cardBgColor: "white",
-              titleColor: resolveColor(resolveTheme(theme)),
-              cardTitleColor: resolveColor(resolveTheme(theme)),
-              cardSubtitleColor: "black",
-              cardContentColor: "black",
-              cardDetailsColor: "black",
-              cardHeight: "100px",
-            }}
-            activeItemIndex={-1}
-            borderLessCards={true}
-            hideControls
-          ></Chrono>
-        </div>
-      </ScrollContainer>
+      <Element name="experience">
+        <Timeline position="right">
+          {items.map((element, index) => {
+            return (
+              <TimelineItem key={index}>
+                <TimelineOppositeContent>
+                  <span className="text-sm sm:text-norma; md:text-xl">
+                    {element.date} -{" "}
+                    <Link href={element.url} target="_blank">
+                      {element.company}
+                    </Link>
+                  </span>
+                </TimelineOppositeContent>
+                <TimelineSeparator>
+                  <TimelineConnector />
+                  <TimelineDot color="inherit">
+                    <LaptopMacIcon />
+                  </TimelineDot>
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent sx={{ py: "12px", px: 2 }} className="w-1/2">
+                  <Typography className="text-sm md:text-base w-full md:w-2/3">
+                    {element.subtitle}
+                  </Typography>
+                </TimelineContent>
+              </TimelineItem>
+            );
+          })}
+        </Timeline>
+      </Element>
     </div>
   );
 }

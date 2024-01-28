@@ -2,42 +2,45 @@ import React from "react";
 import { ConnectionItemComp } from "./ConnectionItem";
 import { PiStackOverflowLogoThin, PiLinkedinLogoThin } from "react-icons/pi";
 import { CiFacebook } from "react-icons/ci";
+import { FaWhatsapp } from "react-icons/fa";
 import { IoLogoGithub } from "react-icons/io5";
 import { ConnectionItem } from "@/app/utils";
 
 type Props = {};
 
 function Connections({}: Props) {
+  const iconSize = "25px";
   const connections: Array<ConnectionItem> = [
     {
-      platform: "Stack Overflow",
-      url: "",
-      icon: <PiStackOverflowLogoThin color="white" size="35px" />,
+      url: "https://stackoverflow.com/users/21012810/hassam-ullah",
+      icon: <PiStackOverflowLogoThin color="white" size={iconSize} />,
       username: "hassamulla",
     },
     {
-      platform: "GitHub",
-      url: "",
-      icon: <IoLogoGithub color="white" size="35px" />,
+      url: "https://github.com/hassamUllah23",
+      icon: <IoLogoGithub color="white" size={iconSize} />,
       username: "hassamUllah23",
     },
     {
-      platform: "LinkedIn",
-      url: "",
-      icon: <PiLinkedinLogoThin color="white" size="35px" />,
+      url: "https://www.linkedin.com/in/hassam-ullah/",
+      icon: <PiLinkedinLogoThin color="white" size={iconSize} />,
       username: "Hassam Ullah",
     },
     {
-      platform: "Facebook",
       url: "",
-      icon: <CiFacebook color="white" size="35px" />,
+      icon: <CiFacebook color="white" size={iconSize} />,
       username: "Hassam Ullah",
+    },
+    {
+      url: "https://wa.me/+923105187828",
+      icon: <FaWhatsapp color="white" size={iconSize} />,
+      username: "+92-310-5187828",
     },
   ];
   return (
     <div
       id="connect"
-      className="flex flex-row justify-center flex-wrap sm:flex-nowrap gap-x-0 sm:gap-x-3 md:gap-x-10"
+      className="flex flex-row justify-evenly sm:justify-start flex-wrap sm:flex-nowrap gap-x-3 md:gap-x-10"
     >
       {connections.map((element, index) => {
         return <ConnectionItemComp key={index} {...element} />;

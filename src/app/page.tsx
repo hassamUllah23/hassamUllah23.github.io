@@ -17,6 +17,7 @@ import { loadFull } from "tsparticles";
 import { darkConfig } from "./configs/particles.config";
 import { ThemeProvider, useTheme } from "next-themes";
 import { ThemesEnum } from "./utils";
+import { Divider } from "./components/Divider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,7 +28,7 @@ export default function Home() {
   useEffect(() => {
     let body = document.querySelector("body");
     if (body) {
-      // body.setAttribute("data-theme", "ghost");
+      body.setAttribute("data-theme", "dark");
       body.style.backgroundColor = "transparent";
     }
     initParticlesEngine(async (engine) => {
@@ -49,14 +50,17 @@ export default function Home() {
         >
           <MyNavbar />
           <div
-            className="px-3 sm:px-5 md:px-10"
+            className="px-3 sm:px-5 md:px-20"
             style={{ backgroundColor: "transparent" }}
           >
             {init && <Particles {...darkConfig} />}
             <Intro />
             <Counts />
+            <Divider title="Skills" />
             <Skills />
+            <Divider title="Projects" />
             <Projects />
+            <Divider title="Work Experience" />
             <Experience />
           </div>
           <Footer />

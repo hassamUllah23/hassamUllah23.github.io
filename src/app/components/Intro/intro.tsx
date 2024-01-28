@@ -59,7 +59,7 @@ function Intro({}: Props) {
                 className="w-full text-tiny sm:text-base neonText shadow shadow-blue-500/40"
                 disableCopy
               >
-                npm install my-resume
+                npm install @resume/hassam
               </Snippet>
             </div>
           </div>

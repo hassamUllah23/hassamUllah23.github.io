@@ -6,18 +6,38 @@ import { resolveColor, resolveTheme } from "@/app/utils";
 import { Contact } from "../Contact";
 import { useTheme } from "next-themes";
 import { FooterTechnologies } from "./FooterTechnologies";
+import { TfiEmail } from "react-icons/tfi";
+import { whatsAppButton } from "@/app/services/assets.service";
+import { MdPhone } from "react-icons/md";
 
 type Props = {};
 function Footer({}: Props) {
   const { theme } = useTheme();
   return (
-    <div className="flex flex-col w-full py-10 my-3 rounded-lg ">
-      <div className="flex flex-row w-full">
-        <div className="w-full md:w-1/2 p-5 flex-flex-col justify-start items-center">
+    <div className="flex flex-col w-full pt-10 mt-3 md:mt-20 rounded-lg">
+      <div className="flex flex-row w-full mb-10 flex-wrap">
+        <div className="w-full md:w-1/2 p-5 flex flex-col justify-start items-center">
           <Contact />
         </div>
-        <div className="w-full h-min md:w-1/2 p-5">
-          <Connections />
+        <div className="flex flex-col w-full md:w-1/2 items-start px-5">
+          <div className="w-full h-min  py-5">
+            <Connections />
+          </div>
+          <div className="flex flex-col gap-5 items-center w-full">
+            <div className="flex flex-row justify-center sm:justify-start">
+              <Link href="https://wa.me/+923105187828" target="_blank">
+                <img src={whatsAppButton.src} alt="" />
+              </Link>
+            </div>
+            <div className="flex flex-row justify-start items-center gap-5">
+              <MdPhone color="white" size={"20px"} />
+              <p>+92 310 5187828</p>
+            </div>
+            <div className="flex flex-row justify-start items-center gap-5">
+              <TfiEmail color="white" size={"20px"} />
+              <p>malikhassamullah1@yahoo.com</p>
+            </div>
+          </div>
         </div>
       </div>
 

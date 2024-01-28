@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Input, Textarea } from "@nextui-org/react";
 import { useForm } from "react-hook-form";
+import { Element } from "react-scroll";
 
 type Props = {};
 
@@ -41,57 +42,62 @@ function Contact({}: Props) {
   };
 
   return (
-    <div className="flex flex-col gap-2 items-center justify-center overflow-auto">
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col items-start gap-4"
+    <Element name="contact">
+      <div
+        id="contact"
+        className="flex flex-col gap-2 items-center justify-center overflow-auto"
       >
-        <div className="flex flex-col w-full gap-4">
-          <div className="flex flex-row w-full gap-3">
-            <Input
-              label="Email"
-              placeholder="Enter your email"
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col items-start gap-4"
+        >
+          <div className="flex flex-col w-full gap-4">
+            <div className="flex flex-row w-full gap-3">
+              <Input
+                label="Email"
+                placeholder="Enter your email"
+                variant="bordered"
+                onClear={() => console.log("clear")}
+                errorMessage={errors.email && "Invalid email address"}
+                validationState={errors.email ? "invalid" : "valid"}
+                style={{ backgroundColor: "black" }}
+                {...emailRegister}
+              />
+              <Input
+                id="subject"
+                label="Subject"
+                placeholder="Enter email subject"
+                variant="bordered"
+                onClear={() => console.log("clear")}
+                validationState={errors.email ? "invalid" : "valid"}
+                style={{ backgroundColor: "black" }}
+              />
+            </div>
+
+            <Textarea
+              label="Message"
               variant="bordered"
-              onClear={() => console.log("clear")}
-              errorMessage={errors.email && "Invalid email address"}
-              validationState={errors.email ? "invalid" : "valid"}
+              placeholder="Write here..."
               style={{ backgroundColor: "black" }}
-              {...emailRegister}
-            />
-            <Input
-              id="subject"
-              label="Subject"
-              placeholder="Enter email subject"
-              variant="bordered"
-              onClear={() => console.log("clear")}
-              validationState={errors.email ? "invalid" : "valid"}
-              style={{ backgroundColor: "black" }}
+              errorMessage={errors.email && "Message Required"}
+              validationState={errors.message ? "invalid" : "valid"}
+              {...messageRegister}
             />
           </div>
 
-          <Textarea
-            label="Message"
-            variant="bordered"
-            placeholder="Write here..."
-            style={{ backgroundColor: "black" }}
-            errorMessage={errors.email && "Message Required"}
-            validationState={errors.message ? "invalid" : "valid"}
-            {...messageRegister}
-          />
-        </div>
-
-        <div className="flex items-center gap-4 w-full">
-          <Button
-            type="submit"
-            variant="shadow"
-            href="mailto:recipient@example.com"
-            className="w-full"
-          >
-            Get in touch
-          </Button>
-        </div>
-      </form>
-    </div>
+          <div className="flex items-center gap-4 w-full">
+            <Button
+              type="submit"
+              variant="flat"
+              href="mailto:recipient@example.com"
+              className="w-full"
+            >
+              Get in touch
+            </Button>
+          </div>
+        </form>
+      </div>
+    </Element>
   );
 }
 

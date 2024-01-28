@@ -11,7 +11,7 @@ export function ProjectItem(project: Project) {
   return (
     <Popup
       triggerComponent={
-        <Card className="py-4 w-full border shadow border-white h-full sm:h-[300px] md:h-[400px] p-1 min-h-full bg-stone-950">
+        <Card className="py-4 w-full border shadow border-gray-700 h-full p-1 min-h-full bg-stone-950">
           <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
             <h4 className="font-bold text-lg uppercase">{title}</h4>
             <Technologies justify="start" technologies={primaryTechnologies} />

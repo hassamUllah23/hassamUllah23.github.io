@@ -6,6 +6,8 @@ import softteams_logo from "../assets/softteams.jpg";
 import xp_bridge_1 from "../assets/xp-bridge.png";
 import logo from "../assets/logo.png";
 import telegram from "../assets/telegram-logo.png";
+import whatsAppButton from "../assets/WhatsAppButtonWhiteMedium.svg";
+
 export {
   picture,
   codegenio_logo,
@@ -15,4 +17,5 @@ export {
   xp_bridge_1,
   logo,
   telegram,
+  whatsAppButton,
 };

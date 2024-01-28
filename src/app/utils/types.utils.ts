@@ -12,7 +12,6 @@ export type Project = {
 };
 
 export type ConnectionItem = {
-  platform: string;
   url: string;
   username: string;
   icon: any;
