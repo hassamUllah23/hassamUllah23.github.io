@@ -52,7 +52,7 @@ function Contact({}: Props) {
           className="flex flex-col items-start gap-4"
         >
           <div className="flex flex-col w-full gap-4">
-            <div className="flex flex-row w-full gap-3">
+            <div className="flex flex-row w-full gap-3 flex-wrap md:flex-nowrap">
               <Input
                 label="Email"
                 placeholder="Enter your email"

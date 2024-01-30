@@ -19,46 +19,50 @@ function Footer({}: Props) {
         <div className="w-full md:w-1/2 p-5 flex flex-col justify-start items-center">
           <Contact />
         </div>
-        <div className="flex flex-col w-full md:w-1/2 items-start px-5">
-          <div className="w-full h-min  py-5">
+        <div className="flex flex-col w-full md:w-1/2 items-center px-5">
+          <div className="w-full h-min py-5">
             <Connections />
           </div>
-          <div className="flex flex-col gap-5 items-center w-full">
-            <div className="flex flex-row justify-center sm:justify-start">
+          <div className="flex flex-col gap-5 items-center md:items-start w-full">
+            <div className="flex flex-row justify-center md:justify-start w-full">
               <Link href="https://wa.me/+923105187828" target="_blank">
                 <img src={whatsAppButton.src} alt="" />
               </Link>
             </div>
-            <div className="flex flex-row justify-start items-center gap-5">
+            <div className="flex flex-row justify-start items-center gap-5 w-fit">
               <MdPhone color="white" size={"20px"} />
-              <p>+92 310 5187828</p>
+              <p className="text-tiny sm:text-sm md:text-normal">
+                +92 310 5187828
+              </p>
             </div>
-            <div className="flex flex-row justify-start items-center gap-5">
+            <div className="flex flex-row justify-start items-center gap-5 w-fit">
               <TfiEmail color="white" size={"20px"} />
-              <p>malikhassamullah1@yahoo.com</p>
+              <p className="text-tiny sm:text-sm md:text-normal">
+                malikhassamullah1@yahoo.com
+              </p>
             </div>
           </div>
         </div>
       </div>
 
       <div
-        className={`flex flex-row justify-center align-center align-center gap-x-2 w-full`}
+        className={`flex flex-row items-center justify-center align-center align-center gap-x-2 w-full`}
         style={{ fontSize: 16 }}
       >
-        <p className="m-0 p-0">{`Made with`}</p>
+        <p className="m-0 p-0 text-tiny sm:text-sm md:text-normal">{`Made with`}</p>
         <GoHeart
           size={25}
           className="m-0 p-0"
           style={{ color: resolveColor(resolveTheme(theme)) }}
         />
-        <p className="m-0 p-0">{`with`}</p>
+        <p className="m-0 p-0 text-tiny sm:text-sm md:text-normal">{`with`}</p>
 
         <Link
-          className="m-0 p-0"
+          className="m-0 p-0 text-tiny sm:text-sm md:text-normal"
           isExternal
           href="https://nextui.org/"
           showAnchorIcon
-          style={{ color: resolveColor(resolveTheme(theme)) }}
+          // style={{ color: resolveColor(resolveTheme(theme)) }}
         >
           Next.js
         </Link>

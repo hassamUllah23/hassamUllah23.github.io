@@ -40,7 +40,7 @@ function Connections({}: Props) {
   return (
     <div
       id="connect"
-      className="flex flex-row justify-evenly sm:justify-start flex-wrap sm:flex-nowrap gap-x-3 md:gap-x-10"
+      className="flex flex-row justify-evenly md:justify-start flex-wrap sm:flex-nowrap gap-x-3 md:gap-x-10"
     >
       {connections.map((element, index) => {
         return <ConnectionItemComp key={index} {...element} />;

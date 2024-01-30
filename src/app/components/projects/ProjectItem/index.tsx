@@ -11,11 +11,11 @@ export function ProjectItem(project: Project) {
   return (
     <Popup
       triggerComponent={
-        <Card className="py-4 w-full border shadow border-gray-700 h-full p-1 min-h-full bg-stone-950">
+        <Card className="py-4 w-full shadow h-full p-1 min-h-full bg-stone-950">
           <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
             <h4 className="font-bold text-lg uppercase">{title}</h4>
             <Technologies justify="start" technologies={primaryTechnologies} />
-            <h4 className="text-tiny py-3 overflow-y-hidden whitespace-nowrap text-ellipsis">
+            <h4 className="text-tiny py-3 overflow-y-hidden whitespace-nowrap truncate w-full">
               {subtitle}
             </h4>
           </CardHeader>

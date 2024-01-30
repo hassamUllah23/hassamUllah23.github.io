@@ -11,6 +11,7 @@ import {
 } from "@nextui-org/react";
 import { Sacramento } from "next/font/google";
 import { Scroll } from "../Scroll";
+import { animateScroll as scroll } from "react-scroll";
 // import { ThemeSelector } from "../ThemeSelector";
 
 const sacremento = Sacramento({
@@ -22,23 +23,28 @@ function MyNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuItems: Array<{ label: string; target: string }> = [
     {
-      label: "Experience",
-      target: "experience",
+      label: "Skills",
+      target: "skills",
     },
     {
       label: "Projects",
       target: "projects",
     },
     {
-      label: "Connect",
-      target: "contact",
+      label: "Experience",
+      target: "experience",
     },
   ];
+
+  const handleButtonClick = () => {
+    scroll.scrollToBottom();
+  };
 
   return (
     <Navbar
       style={{ backgroundColor: "transparent" }}
       onMenuOpenChange={setIsMenuOpen}
+      isMenuOpen={isMenuOpen}
       shouldHideOnScroll
     >
       <NavbarMenuToggle
@@ -67,7 +73,7 @@ function MyNavbar() {
         {/* <ThemeSelector /> */}
         <Scroll target={"contact"}>
           <NavbarItem>
-            <Button color="default" variant="flat">
+            <Button onClick={handleButtonClick} variant="flat" color="default">
               Get in touch
             </Button>
           </NavbarItem>
@@ -77,7 +83,13 @@ function MyNavbar() {
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <Scroll key={index} target={item.target}>
-            <NavbarMenuItem>{item.label}</NavbarMenuItem>
+            <NavbarMenuItem
+              onClick={() => {
+                setIsMenuOpen(false);
+              }}
+            >
+              {item.label}
+            </NavbarMenuItem>
           </Scroll>
         ))}
       </NavbarMenu>

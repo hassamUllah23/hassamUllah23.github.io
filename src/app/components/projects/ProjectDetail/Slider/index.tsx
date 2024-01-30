@@ -21,8 +21,9 @@ const Slider = ({ images }: Props) => {
       modules={[Navigation, EffectCoverflow, Pagination]}
       className="m-0 p-0 py-2"
       style={{
-        // maxWidth: "100%",
+        maxWidth: "fit-content",
         overflow: "hidden",
+        backgroundColor: "green",
       }}
     >
       {images.map((image: string, index) => {
@@ -32,10 +33,12 @@ const Slider = ({ images }: Props) => {
             style={{
               height: "fit-content",
               overflow: "hidden",
+              backgroundColor: "red",
+              width: "100px",
             }}
             className="flex flex-row justify-center cursor-pointer"
           >
-            <div style={{ width: "150px" }}>
+            <div style={{ maxWidth: "150px", width: "100%" }}>
               <img
                 src={image}
                 alt="image"

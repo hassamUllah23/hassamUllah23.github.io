@@ -9,7 +9,7 @@ import TimelineDot from "@mui/lab/TimelineDot";
 import LaptopMacIcon from "@mui/icons-material/LaptopMac";
 import Typography from "@mui/material/Typography";
 import { Element } from "react-scroll";
-import Link from "next/link";
+import { Link } from "@nextui-org/react";
 
 type Props = {};
 
@@ -78,23 +78,40 @@ function Experience({}: Props) {
           {items.map((element, index) => {
             return (
               <TimelineItem key={index}>
-                <TimelineOppositeContent>
-                  <span className="text-sm sm:text-norma; md:text-xl">
+                <TimelineOppositeContent
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "end",
+                  }}
+                >
+                  <span className="text-tiny sm:text-sm md:text-normal">
                     {element.date} -{" "}
-                    <Link href={element.url} target="_blank">
+                    <Link href={element.url} target="_blank" isExternal showAnchorIcon>
                       {element.company}
                     </Link>
                   </span>
                 </TimelineOppositeContent>
-                <TimelineSeparator>
+                <TimelineSeparator sx={{ minHeight: "150px" }}>
                   <TimelineConnector />
-                  <TimelineDot color="inherit">
+                  <TimelineDot color="inherit" variant="outlined">
                     <LaptopMacIcon />
                   </TimelineDot>
                   <TimelineConnector />
                 </TimelineSeparator>
-                <TimelineContent sx={{ py: "12px", px: 2 }} className="w-1/2">
-                  <Typography className="text-sm md:text-base w-full md:w-2/3">
+                <TimelineContent
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "start",
+                    py: "12px",
+                    px: 2,
+                  }}
+                  className="w-1/2"
+                >
+                  <Typography className="text-tiny sm:text-sm md:text-normal w-full md:w-2/3">
                     {element.subtitle}
                   </Typography>
                 </TimelineContent>

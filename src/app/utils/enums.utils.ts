@@ -27,6 +27,7 @@ enum TechnologiesEnum {
   github = "GitHub",
   mysql = "MySQL",
   puppeteer = "Puppeteer",
+  agora = "Agora SDK",
   telegram = "TelegramBot API",
   angular = "Angular",
   stripe = "Stripe",

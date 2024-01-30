@@ -18,6 +18,7 @@ import { darkConfig } from "./configs/particles.config";
 import { ThemeProvider, useTheme } from "next-themes";
 import { ThemesEnum } from "./utils";
 import { Divider } from "./components/Divider";
+import { Element } from "react-scroll";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -56,14 +57,22 @@ export default function Home() {
             {init && <Particles {...darkConfig} />}
             <Intro />
             <Counts />
-            <Divider title="Skills" />
+            <Element name="skills">
+              <Divider title="Skills" />
+            </Element>
             <Skills />
-            <Divider title="Projects" />
+            <Element name="projects">
+              <Divider title="Projects" />
+            </Element>
             <Projects />
-            <Divider title="Work Experience" />
+            <Element name="experience">
+              <Divider title="Work Experience" />
+            </Element>
             <Experience />
           </div>
-          <Footer />
+          <Element name="contact">
+            <Footer />
+          </Element>
         </main>
       </NextUIProvider>
     </ThemeProvider>
