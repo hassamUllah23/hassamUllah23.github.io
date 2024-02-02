@@ -88,7 +88,12 @@ function Experience({}: Props) {
                 >
                   <span className="text-tiny sm:text-sm md:text-normal">
                     {element.date} -{" "}
-                    <Link href={element.url} target="_blank" isExternal showAnchorIcon>
+                    <Link
+                      href={element.url}
+                      target="_blank"
+                      isExternal
+                      showAnchorIcon
+                    >
                       {element.company}
                     </Link>
                   </span>

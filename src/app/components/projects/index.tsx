@@ -80,7 +80,7 @@ export function Projects({}: Props) {
       subtitle: "A NFT ",
       description:
         "A Web3 based game that revolves around collecting and moving NFTs from one blockchain to another using XP Netowrk's NFT bridge.",
-    cover: xpr3.src,
+      cover: xpr3.src,
       url: "",
       technologies: [
         TechnologiesEnum.react,

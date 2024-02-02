@@ -22,9 +22,6 @@ import xpr2 from "../assets/xpr-2.jpg";
 import xpr3 from "../assets/xpr-3.jpg";
 import xpr4 from "../assets/xpr-4.jpg";
 
-
-
-
 export {
   picture,
   codegenio_logo,
@@ -48,5 +45,5 @@ export {
   xpr1,
   xpr2,
   xpr3,
-  xpr4
+  xpr4,
 };
