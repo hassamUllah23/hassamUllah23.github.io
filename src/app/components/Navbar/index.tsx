@@ -23,12 +23,12 @@ function MyNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuItems: Array<{ label: string; target: string }> = [
     {
-      label: "Skills",
-      target: "skills",
-    },
-    {
       label: "Projects",
       target: "projects",
+    },
+    {
+      label: "Skills",
+      target: "skills",
     },
     {
       label: "Experience",

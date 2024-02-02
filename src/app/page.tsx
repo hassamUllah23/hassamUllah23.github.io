@@ -57,14 +57,14 @@ export default function Home() {
             {init && <Particles {...darkConfig} />}
             <Intro />
             <Counts />
-            <Element name="skills">
-              <Divider title="Skills" />
-            </Element>
-            <Skills />
             <Element name="projects">
               <Divider title="Projects" />
             </Element>
             <Projects />
+            <Element name="skills">
+              <Divider title="Skills" />
+            </Element>
+            <Skills />
             <Element name="experience">
               <Divider title="Work Experience" />
             </Element>
