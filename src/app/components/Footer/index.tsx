@@ -15,11 +15,11 @@ function Footer({}: Props) {
   const { theme } = useTheme();
   return (
     <div className="flex flex-col w-full pt-10 mt-3 md:mt-20 rounded-lg">
-      <div className="flex flex-row w-full mb-10 flex-wrap">
-        <div className="w-full md:w-1/2 p-5 flex flex-col justify-start items-center">
+      <div className="flex flex-row w-full mb-10 justify-center gap-20 flex-wrap">
+        <div className="w-full md:w-1/3 px-5 md:px-0 flex flex-col justify-start items-center">
           <Contact />
         </div>
-        <div className="flex flex-col w-full md:w-1/2 items-center px-5">
+        <div className="flex flex-col w-full md:w-1/3 items-center">
           <div className="w-full h-min py-5">
             <Connections />
           </div>

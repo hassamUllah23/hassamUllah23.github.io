@@ -24,20 +24,23 @@ type TimeLineData = {
 function Experience({}: Props) {
   const items: Array<TimeLineData> = [
     {
-      date: "March 1st, 2022",
-      company: "Codegenio",
-      url: "https://www.linkedin.com/company/codinggenio/about/",
+      date: "January 1st, 2024",
+      company: "Joined Softteams a/s",
+      url: "http://www.softteams.com/",
       subtitle:
-        "My first professional employment. Got to learn the importance of teamwork and trusting your peers to ensure achieving work-related milestones on time. Also learnt the importance of staying true to the standard practices in coding and overall work management.",
-      bullets: [
-        "Wrote and maintained TypeScript code for full-scale Angular projects.",
-        "Learnt to utilize DevTools to maximize productivity.",
-        "Learnt Angular-Marerial and Ngx-Bootstrap modules for UI.",
-      ],
+        "A services-based software development firm with its main focus on web development, specifically in Elixir programming language.",
+      bullets: ["I learned nest", "I learned nest"],
     },
-
     {
-      date: "July 1st, 2022",
+      date: "January 1st, 2023",
+      company: "Joined Krypto-Hive",
+      url: "https://kryptohive.com/",
+      subtitle:
+        "A services-based software development company with its primary focus around Web3 solutions, ranging from NFT Marketplace, to a Multi-Chain NFT Bridge.",
+      bullets: [],
+    },
+    {
+      date: "February 1st, 2022",
       company: "Joined Protovoid Technologies",
       url: "https://protovoid.com/",
       subtitle:
@@ -51,23 +54,17 @@ function Experience({}: Props) {
         "Learnt AWS S3 service for file storage.",
       ],
     },
-
     {
-      date: "January 1st, 2023",
-      company: "Joined Krypto-Hive",
-      url: "https://kryptohive.com/",
+      date: "March 1st, 2021",
+      company: "Codegenio",
+      url: "https://www.linkedin.com/company/codinggenio/about/",
       subtitle:
-        "A services-based software development company with its primary focus around Web3 solutions, ranging from NFT Marketplace, to a Multi-Chain NFT Bridge.",
-      bullets: [],
-    },
-
-    {
-      date: "January 1st, 2024",
-      company: "Joined Softteams a/s",
-      url: "http://www.softteams.com/",
-      subtitle:
-        "A services-based software development firm with its main focus on web development, specifically in elixir.",
-      bullets: ["I learned nest", "I learned nest"],
+        "My first professional employment. Got to learn the importance of teamwork and trusting your peers to ensure achieving work-related milestones on time. Also learnt the importance of staying true to the standard practices in coding and overall work management.",
+      bullets: [
+        "Wrote and maintained TypeScript code for full-scale Angular projects.",
+        "Learnt to utilize DevTools to maximize productivity.",
+        "Learnt Angular-Marerial and Ngx-Bootstrap modules for UI.",
+      ],
     },
   ];
 
