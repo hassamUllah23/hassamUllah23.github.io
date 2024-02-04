@@ -46,7 +46,7 @@ export default function Home() {
     <ThemeProvider themes={Array.from(Object.values(ThemesEnum))}>
       <NextUIProvider>
         <main
-          className={`p-2 ${inter.className} ${theme}`}
+          className={`${inter.className} ${theme}`}
           style={{ backgroundColor: "transparent" }}
         >
           <MyNavbar />
