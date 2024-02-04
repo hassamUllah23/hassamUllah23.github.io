@@ -50,6 +50,13 @@ enum TechnologiesEnum {
   forms = "React-Hook-Form",
 }
 
+enum LanguagesEnum {
+  js = "JavaScript",
+  ts = "TypeScript",
+  java = "JAVA",
+  py = "Python",
+}
+
 enum ThemesEnum {
   ocean = "ocean",
   forest = "forest",
@@ -64,4 +71,4 @@ enum ColorsEnum {
   ghost = "white",
 }
 
-export { TechnologiesEnum, ThemesEnum, ColorsEnum };
+export { TechnologiesEnum, ThemesEnum, ColorsEnum, LanguagesEnum };

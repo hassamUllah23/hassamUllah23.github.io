@@ -3,6 +3,7 @@ import { TechnologiesEnum } from "@/app/utils";
 import { SkillSectionProps, SkillsSection } from "./SkillsSection";
 import { Accordion, AccordionProps, AccordionItem } from "@nextui-org/react";
 import { Skill } from "./Skill";
+import { LanguagesEnum } from "@/app/utils/enums.utils";
 
 type Props = {};
 
@@ -26,6 +27,27 @@ function Skills({}: Props) {
         {
           label: TechnologiesEnum.express,
           value: 90,
+        },
+      ],
+    },
+    {
+      title: "Languages",
+      skills: [
+        {
+          label: LanguagesEnum.ts,
+          value: 95,
+        },
+        {
+          label: LanguagesEnum.js,
+          value: 90,
+        },
+        {
+          label: LanguagesEnum.java,
+          value: 80,
+        },
+        {
+          label: LanguagesEnum.py,
+          value: 70,
         },
       ],
     },

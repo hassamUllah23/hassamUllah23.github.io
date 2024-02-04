@@ -4,6 +4,8 @@ import { Snippet } from "@nextui-org/react";
 import { saveAs } from "file-saver";
 import { TechnologiesEnum } from "@/app/utils";
 import "./style.css";
+import { download } from "@/app/services/assets.service";
+import { BsDownload } from "react-icons/bs";
 
 type Props = {};
 const gulzar = Gulzar({ weight: "400", subsets: ["latin"] });
@@ -52,11 +54,12 @@ function Intro({}: Props) {
 
           <div className="flex flex-row justify-center w-full">
             <div
-              className="flex flex-row justify-center cursor-pointer w-3/4 sm:w-1/2 md:w-1/3 "
+              className="flex flex-row justify-center cursor-pointer w-full sm:w-1/2 md:w-1/3 "
               onClick={handleDownload}
             >
               <Snippet
-                className="w-full text-tiny sm:text-base neonText shadow shadow-blue-500/40"
+                className="w-full text-tiny sm:text-base neonText shadow shadow-blue-500"
+                copyIcon={<BsDownload />}
                 disableCopy
               >
                 npm install @resume/hassam
