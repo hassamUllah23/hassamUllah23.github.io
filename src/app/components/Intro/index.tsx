@@ -4,7 +4,6 @@ import { Snippet } from "@nextui-org/react";
 import { saveAs } from "file-saver";
 import { TechnologiesEnum } from "@/app/utils";
 import "./style.css";
-import { download } from "@/app/services/assets.service";
 import { BsDownload } from "react-icons/bs";
 
 type Props = {};

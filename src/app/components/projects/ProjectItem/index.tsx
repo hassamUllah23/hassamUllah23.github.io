@@ -19,12 +19,12 @@ export function ProjectItem(project: Project) {
               {subtitle}
             </h4>
           </CardHeader>
-          <CardBody className="overflow-visible py-2 w-full">
+          <CardBody className="overflow-visible py-2 w-full brightness-90">
             <Image
               alt="Card background"
               src={cover}
               width={"100%"}
-              className="rounded-xl object-cover w-full"
+              className="rounded-xl object-cover w-full "
               style={{ maxHeight: "100px", width: "100%" }}
             />
           </CardBody>

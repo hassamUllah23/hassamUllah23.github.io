@@ -151,7 +151,7 @@ export function Projects({}: Props) {
       title: "DFiance Admin Portal",
       subtitle: "Admin portal for a Web3-based card game.",
       description:
-        "DFiance is a Web3-based card game where you can buy and upgrade cards using digital currencies and.",
+        "DFiance is a Web3-based card game where you can buy and upgrade cards using digital currencies.",
       cover: dfiance.src,
       url: "https://dfiance.com/",
       technologies: [
