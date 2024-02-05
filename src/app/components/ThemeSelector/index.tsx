@@ -14,10 +14,11 @@ function ThemeSelector({}: Props) {
   const { theme } = useTheme();
 
   const themes: Array<ThemesEnum> = [
-    ThemesEnum.forest,
+    // ThemesEnum.forest,
     ThemesEnum.ghost,
-    ThemesEnum.ocean,
-    ThemesEnum.sunset,
+    ThemesEnum.night,
+    // ThemesEnum.ocean,
+    // ThemesEnum.sunset,
   ];
   return (
     <div className="flex items-center gap-4">
@@ -57,13 +58,14 @@ function SelectButton({
       className={`flex flex-row gap-x-3 cursor-pointer`}
       onClick={() => {
         if (!selector) {
+          console.log("change");
           setTheme(theme);
-          window.location.reload();
+          // window.location.reload();
         }
       }}
     >
       <div
-        className={`p-1 rounded-full w-min ${classes} ${
+        className={`p-1 rounded-full w-min border border-gray-100 ${classes} ${
           selector ? "border border-gray-100" : ""
         }`}
       >

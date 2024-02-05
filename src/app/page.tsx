@@ -29,8 +29,8 @@ export default function Home() {
   useEffect(() => {
     let body = document.querySelector("body");
     if (body) {
-      body.setAttribute("data-theme", "dark");
-      body.style.backgroundColor = "transparent";
+      // body.setAttribute("data-theme", "dark");
+      // body.style.backgroundColor = "transparent";
     }
     initParticlesEngine(async (engine) => {
       await loadFull(engine, true);
@@ -40,14 +40,14 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    console.info("THEME CHANGED");
+    console.log("THEME CHANGED");
   }, [theme]);
   return (
     <ThemeProvider themes={Array.from(Object.values(ThemesEnum))}>
       <NextUIProvider>
         <main
           className={`${inter.className} ${theme}`}
-          style={{ backgroundColor: "transparent" }}
+          // style={{ backgroundColor: "transparent" }}
         >
           <MyNavbar />
           <div

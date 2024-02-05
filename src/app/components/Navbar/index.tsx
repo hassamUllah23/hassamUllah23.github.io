@@ -12,7 +12,7 @@ import {
 import { Sacramento } from "next/font/google";
 import { Scroll } from "../Scroll";
 import { animateScroll as scroll } from "react-scroll";
-// import { ThemeSelector } from "../ThemeSelector";
+import { ThemeSelector } from "../ThemeSelector";
 
 const sacremento = Sacramento({
   weight: "400",
@@ -70,7 +70,7 @@ function MyNavbar() {
         })}
       </NavbarContent>
       <NavbarContent justify="end">
-        {/* <ThemeSelector /> */}
+        <ThemeSelector />
         <Scroll target={"contact"}>
           <NavbarItem>
             <Button onClick={handleButtonClick} variant="flat" color="default">

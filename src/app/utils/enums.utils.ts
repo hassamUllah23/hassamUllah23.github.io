@@ -58,17 +58,19 @@ enum LanguagesEnum {
 }
 
 enum ThemesEnum {
-  ocean = "ocean",
-  forest = "forest",
-  sunset = "sunset",
+  // ocean = "ocean",
+  // forest = "forest",
+  // sunset = "sunset",
   ghost = "ghost",
+  night = "starry_night",
 }
 
 enum ColorsEnum {
-  ocean = "blue",
-  forest = "darkgreen",
-  sunset = "orange",
+  // ocean = "blue",
+  // forest = "darkgreen",
+  // sunset = "orange",
   ghost = "white",
+  night = "transparent",
 }
 
 export { TechnologiesEnum, ThemesEnum, ColorsEnum, LanguagesEnum };
