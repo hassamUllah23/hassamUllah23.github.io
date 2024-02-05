@@ -12,7 +12,13 @@ const orbitron = Orbitron({ weight: "400", subsets: ["latin"] });
 
 function Intro({}: Props) {
   const handleDownload = () => {
-    saveAs("/resume.pdf", "MERN_Stack_Developer-Hassam_Ullah.pdf");
+    const filePath = "/resume.pdf";
+    fetch(filePath)
+      .then((response) => response.blob())
+      .then((blob) => {
+        saveAs(blob, "MERN_Stack_Developer-Hassam_Ullah.pdf");
+      })
+      .catch((error) => console.error("Error downloading file:", error));
   };
 
   const technologies: Array<TechnologiesEnum> = [
