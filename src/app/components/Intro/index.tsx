@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Gulzar, Orbitron } from "next/font/google";
 import { Snippet } from "@nextui-org/react";
-import { saveAs } from "file-saver";
 import { TechnologiesEnum } from "@/app/utils";
 import "./style.css";
 import { BsDownload } from "react-icons/bs";
@@ -11,8 +10,27 @@ const gulzar = Gulzar({ weight: "400", subsets: ["latin"] });
 const orbitron = Orbitron({ weight: "400", subsets: ["latin"] });
 
 function Intro({}: Props) {
-  const handleDownload = () => {
-    saveAs("/resume.pdf", "MERN_Stack_Developer-Hassam_Ullah.pdf");
+  const [filePath, setFilePath] = useState<string>("");
+  const fileName = "resume.pdf";
+  useEffect(() => {
+    const originUrl = window.location.origin;
+    setFilePath(
+      originUrl.includes("localhost")
+        ? `${window.location.origin}/${fileName}`
+        : `${window.location.origin}/personal-portfolio/${fileName}`,
+    );
+
+    if (originUrl.includes("localhost"))
+      setFilePath(`${window.location.origin}/${fileName}`);
+  }, []);
+
+  const handleOpen = () => {
+    const anchorTag = document.createElement("a");
+    anchorTag.href = filePath;
+    anchorTag.target = "blank";
+    document.body.appendChild(anchorTag);
+    anchorTag.click();
+    anchorTag.remove();
   };
 
   const technologies: Array<TechnologiesEnum> = [
@@ -54,7 +72,7 @@ function Intro({}: Props) {
           <div className="flex flex-row justify-center w-full">
             <div
               className="flex flex-row justify-center cursor-pointer w-full sm:w-1/2 md:w-1/3 "
-              onClick={handleDownload}
+              onClick={handleOpen}
             >
               <Snippet
                 className="w-full text-tiny sm:text-base neonText shadow shadow-blue-500"

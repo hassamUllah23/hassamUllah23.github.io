@@ -19,7 +19,6 @@
     "@nextui-org/react": "^2.2.9",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.0.3",
-    "file-saver": "^2.0.5",
     "framer-motion": "^10.17.9",
     "next": "14.0.4",
     "next-themes": "^0.2.1",
@@ -35,7 +34,6 @@
     "tsparticles": "^3.0.3"
   },
   "devDependencies": {
-    "@types/file-saver": "^2.0.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-countup": "^4.3.1",
