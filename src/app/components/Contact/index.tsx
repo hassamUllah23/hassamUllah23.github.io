@@ -45,14 +45,14 @@ function Contact({}: Props) {
     <Element name="contact">
       <div
         id="contact"
-        className="flex flex-col gap-2 items-center justify-center overflow-auto"
+        className="flex flex-col items-center justify-center gap-2 overflow-auto"
       >
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col items-start gap-4"
         >
-          <div className="flex flex-col w-full gap-4">
-            <div className="flex flex-row w-full gap-3 flex-wrap md:flex-nowrap">
+          <div className="flex w-full flex-col gap-4">
+            <div className="flex w-full flex-row flex-wrap gap-3 md:flex-nowrap">
               <Input
                 label="Email"
                 placeholder="Enter your email"
@@ -85,7 +85,7 @@ function Contact({}: Props) {
             />
           </div>
 
-          <div className="flex items-center gap-4 w-full">
+          <div className="flex w-full items-center gap-4">
             <Button
               type="submit"
               variant="flat"

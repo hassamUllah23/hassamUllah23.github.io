@@ -15,7 +15,7 @@ function Coutner({ limit, duration }: Props) {
       useEasing
       enableScrollSpy
       scrollSpyDelay={300}
-      className="font-bold text-lg md:text-3xl lg:text-6xl text-center"
+      className="text-center text-lg font-bold md:text-3xl lg:text-6xl"
       style={{ color: "white" }}
     ></CountUp>
   );

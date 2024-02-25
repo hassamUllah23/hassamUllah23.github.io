@@ -152,10 +152,10 @@ function Skills({}: Props) {
   return (
     <div>
       <div className="hidden md:flex">
-        <div className="flex flex-row flex-wrap w-full">
+        <div className="flex w-full flex-row flex-wrap">
           {sections.map((skill, index) => {
             return (
-              <div className="w-full md:w-1/2 px-10">
+              <div className="w-full px-10 md:w-1/2">
                 <SkillsSection key={index} {...skill} />
               </div>
             );
@@ -163,12 +163,12 @@ function Skills({}: Props) {
         </div>
       </div>
       <div className="flex md:hidden">
-        <div className="flex flex-col gap-5 w-full">
+        <div className="flex w-full flex-col gap-5">
           {sections.map((skill, index) => {
             return (
               <div className="w-full">
                 <MyAccordion title={skill.title}>
-                  <div className="flex flex-row w-full flex-wrap">
+                  <div className="flex w-full flex-row flex-wrap">
                     {skill.skills.map((skill, index) => {
                       return (
                         <div className="w-full sm:w-1/2">

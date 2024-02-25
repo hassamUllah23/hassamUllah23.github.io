@@ -23,13 +23,13 @@ function ThemeSelector({}: Props) {
     <div className="flex items-center gap-4">
       <Popup
         triggerComponent={
-          <div className="p-3 cursor-pointer">
+          <div className="cursor-pointer p-3">
             <SelectButton theme={resolveTheme(theme)} selector />
           </div>
         }
       >
         <div
-          className="px-3 py-2 flex flex-col gap-y-3 rounded-lg"
+          className="flex flex-col gap-y-3 rounded-lg px-3 py-2"
           style={{ backgroundColor: "black" }}
         >
           {themes.map((theme: ThemesEnum, index) => {
@@ -54,7 +54,7 @@ function SelectButton({
 
   return (
     <div
-      className={`flex flex-row gap-x-3 cursor-pointer`}
+      className={`flex cursor-pointer flex-row gap-x-3`}
       onClick={() => {
         if (!selector) {
           setTheme(theme);
@@ -63,7 +63,7 @@ function SelectButton({
       }}
     >
       <div
-        className={`p-1 rounded-full w-min ${classes} ${
+        className={`w-min rounded-full p-1 ${classes} ${
           selector ? "border border-gray-100" : ""
         }`}
       >
@@ -73,7 +73,7 @@ function SelectButton({
         ></div>
       </div>
       {!selector ? (
-        <p className="font-semibold text-sm capitalize">{theme}</p>
+        <p className="text-sm font-semibold capitalize">{theme}</p>
       ) : null}
     </div>
   );

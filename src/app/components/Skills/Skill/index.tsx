@@ -19,7 +19,7 @@ function Skill({ label, value }: SkillProps) {
       label={label}
       size="sm"
       showValueLabel={true}
-      className=" text-white my-3"
+      className=" my-3 text-white"
     />
   );
 }

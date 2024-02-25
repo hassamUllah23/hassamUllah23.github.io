@@ -174,7 +174,7 @@ export function Projects({}: Props) {
     <Element name="projects">
       <div
         id="projects"
-        className="flex flex-row justify-center items-stretch flex-wrap py-1 gap-3"
+        className="flex flex-row flex-wrap items-stretch justify-center gap-3 py-1"
       >
         {projects.map((project, index) => {
           return (

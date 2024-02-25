@@ -20,22 +20,22 @@ function FooterTechnologies({}: Props) {
   ];
   return (
     <div className="my-5">
-      <div className="flex flex-row items-center justify-center w-full">
+      <div className="flex w-full flex-row items-center justify-center">
         <p
-          className={` text-tiny sm:text-sm md:text-normal ${orbitron.className}`}
+          className={` md:text-normal text-tiny sm:text-sm ${orbitron.className}`}
         >
           AND
         </p>
       </div>
 
-      <div className="flex flex-row items-center justify-center w-full flex-wrap md:flex-nowrap gap-1 sm:gap-3 my-2 sm:my-4">
+      <div className="my-2 flex w-full flex-row flex-wrap items-center justify-center gap-1 sm:my-4 sm:gap-3 md:flex-nowrap">
         {technologies.map((technology, index) => {
           return (
             <div key={index}>
               <Chip
                 variant="bordered"
                 radius="md"
-                className="whitespace-nowrap text-tiny sm:text-sm p-0 sm:p-1"
+                className="whitespace-nowrap p-0 text-tiny sm:p-1 sm:text-sm"
                 style={{ padding: 0 }}
               >
                 {technology}

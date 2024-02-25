@@ -11,20 +11,20 @@ export function ProjectItem(project: Project) {
   return (
     <Popup
       triggerComponent={
-        <Card className="py-4 w-full shadow h-full p-1 min-h-full bg-stone-950">
-          <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-            <h4 className="font-bold text-lg uppercase">{title}</h4>
+        <Card className="h-full min-h-full w-full bg-stone-950 p-1 py-4 shadow">
+          <CardHeader className="flex-col items-start px-4 pb-0 pt-2">
+            <h4 className="text-lg font-bold uppercase">{title}</h4>
             <Technologies justify="start" technologies={primaryTechnologies} />
-            <h4 className="text-tiny py-3 overflow-y-hidden whitespace-nowrap truncate w-full">
+            <h4 className="w-full overflow-y-hidden truncate whitespace-nowrap py-3 text-tiny">
               {subtitle}
             </h4>
           </CardHeader>
-          <CardBody className="overflow-visible py-2 w-full brightness-90">
+          <CardBody className="w-full overflow-visible py-2 brightness-90">
             <Image
               alt="Card background"
               src={cover}
               width={"100%"}
-              className="rounded-xl object-cover w-full "
+              className="w-full rounded-xl object-cover "
               style={{ maxHeight: "100px", width: "100%" }}
             />
           </CardBody>

@@ -36,7 +36,7 @@ const Slider = ({ images }: Props) => {
               backgroundColor: "red",
               width: "100px",
             }}
-            className="flex flex-row justify-center cursor-pointer"
+            className="flex cursor-pointer flex-row justify-center"
           >
             <div style={{ maxWidth: "150px", width: "100%" }}>
               <img

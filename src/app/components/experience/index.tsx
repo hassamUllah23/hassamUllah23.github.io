@@ -84,14 +84,14 @@ function Experience({}: Props) {
                   }}
                   className="p-1 md:p-5"
                 >
-                  <span className="text-[10px] sm:text-sm md:text-normal">
+                  <span className="md:text-normal text-[10px] sm:text-sm">
                     {element.date} -{" "}
                     <Link
                       href={element.url}
                       target="_blank"
                       isExternal
                       showAnchorIcon
-                      className="text-[10px] sm:text-sm md:text-normal"
+                      className="md:text-normal text-[10px] sm:text-sm"
                     >
                       {element.company}
                     </Link>
@@ -100,7 +100,7 @@ function Experience({}: Props) {
                 <TimelineSeparator sx={{ minHeight: "150px" }}>
                   <TimelineConnector />
                   <TimelineDot color="inherit" variant="outlined">
-                    <LaptopMacIcon className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+                    <LaptopMacIcon className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
                   </TimelineDot>
                   <TimelineConnector />
                 </TimelineSeparator>
@@ -115,7 +115,7 @@ function Experience({}: Props) {
                   }}
                   className="w-1/2 p-1 md:p-5"
                 >
-                  <Typography className="text-[10px] sm:text-sm md:text-normal w-full md:w-2/3">
+                  <Typography className="md:text-normal w-full text-[10px] sm:text-sm md:w-2/3">
                     {element.subtitle}
                   </Typography>
                 </TimelineContent>

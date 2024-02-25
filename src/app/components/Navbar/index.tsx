@@ -54,13 +54,13 @@ function MyNavbar() {
       <NavbarBrand className={`${sacremento.className}`}>
         <h1 className="font-bold">Hassam Ullah</h1>
       </NavbarBrand>
-      <NavbarContent className="hidden sm:flex flex-1" justify="center">
+      <NavbarContent className="hidden flex-1 sm:flex" justify="center">
         {menuItems.map((element, index) => {
           {
             return (
               <Scroll key={index} target={element.target}>
                 <NavbarItem>
-                  <span className="text-white font-semibold">
+                  <span className="font-semibold text-white">
                     {element.label}
                   </span>
                 </NavbarItem>

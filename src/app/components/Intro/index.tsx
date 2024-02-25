@@ -42,12 +42,12 @@ function Intro({}: Props) {
   return (
     <main>
       <div
-        className={`flex flex-row justify-center content-center w-full h-5/6 pb-10 sm:pb-20 lg:pb-60 pt-10 md:pt-36`}
+        className={`flex h-5/6 w-full flex-row content-center justify-center pb-10 pt-10 sm:pb-20 md:pt-36 lg:pb-60`}
       >
-        <div className="flex flex-col justify-center content-center w-full">
+        <div className="flex w-full flex-col content-center justify-center">
           <div className="flex flex-row justify-center pb-10">
             <h1
-              className={`text-3xl sm:text-4xl md:text-6xl font-bold text-center`}
+              className={`text-center text-3xl font-bold sm:text-4xl md:text-6xl`}
             >
               Full Stack Developer
             </h1>
@@ -59,7 +59,7 @@ function Intro({}: Props) {
             <p>{`Hassam   |   حسام`}</p>
           </div>
 
-          <div className="flex flex-row justify-center gap-x-3 sm:gap-x-5 md:gap-x-5 lg:gap-x-10 content center my-10">
+          <div className="content center my-10 flex flex-row justify-center gap-x-3 sm:gap-x-5 md:gap-x-5 lg:gap-x-10">
             {technologies.map((technology, index) => {
               return (
                 <div key={index} className={`${orbitron.className}`}>
@@ -69,13 +69,13 @@ function Intro({}: Props) {
             })}
           </div>
 
-          <div className="flex flex-row justify-center w-full">
+          <div className="flex w-full flex-row justify-center">
             <div
-              className="flex flex-row justify-center cursor-pointer w-full sm:w-1/2 md:w-1/3 "
+              className="flex w-full cursor-pointer flex-row justify-center sm:w-1/2 md:w-1/3 "
               onClick={handleOpen}
             >
               <Snippet
-                className="w-full text-tiny sm:text-base neonText shadow shadow-blue-500"
+                className="neonText w-full text-tiny shadow shadow-blue-500 sm:text-base"
                 copyIcon={<BsDownload />}
                 disableCopy
               >

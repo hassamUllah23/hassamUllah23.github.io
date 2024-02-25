@@ -10,14 +10,14 @@ type SkillSectionProps = {
 function SkillsSection({ title, skills }: SkillSectionProps) {
   const { theme } = useTheme();
   return (
-    <div className="flex flex-col gap-4 mb-10">
-      <h1 className="text-sm sm:text-base md:text-xl font-bold px-5">
+    <div className="mb-10 flex flex-col gap-4">
+      <h1 className="px-5 text-sm font-bold sm:text-base md:text-xl">
         {title}
       </h1>
-      <div className="flex flex-row w-full flex-wrap">
+      <div className="flex w-full flex-row flex-wrap">
         {skills.map((skill, index) => {
           return (
-            <div className="w-full sm:w-1/2 p-5">
+            <div className="w-full p-5 sm:w-1/2">
               <Skill key={index} {...skill} />
             </div>
           );
