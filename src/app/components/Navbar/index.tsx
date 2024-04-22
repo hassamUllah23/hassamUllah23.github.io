@@ -12,6 +12,8 @@ import {
 import { Sacramento } from "next/font/google";
 import { Scroll } from "../Scroll";
 import { animateScroll as scroll } from "react-scroll";
+import { calendly } from "@/app/services/assets.service";
+import { MyTooltip } from "../Tooltip";
 // import { ThemeSelector } from "../ThemeSelector";
 
 const sacremento = Sacramento({
@@ -73,9 +75,24 @@ function MyNavbar() {
         {/* <ThemeSelector /> */}
         <Scroll target={"contact"}>
           <NavbarItem>
-            <Button onClick={handleButtonClick} variant="flat" color="default">
-              Get in touch
-            </Button>
+            <div className="flex w-max flex-row items-center gap-3">
+              <MyTooltip text={"Setup a meeting"}>
+                <a
+                  href="https://calendly.com/hassamullah/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={calendly.src} width={35} height={"auto"} alt="" />
+                </a>
+              </MyTooltip>
+              <Button
+                onClick={handleButtonClick}
+                variant="flat"
+                color="default"
+              >
+                Get in touch
+              </Button>
+            </div>
           </NavbarItem>
         </Scroll>
       </NavbarContent>

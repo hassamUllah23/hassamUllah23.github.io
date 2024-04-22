@@ -1,7 +1,12 @@
 import React, { PropsWithChildren } from "react";
 import { TechnologiesEnum } from "@/app/utils";
 import { SkillSectionProps, SkillsSection } from "./SkillsSection";
-import { Accordion, AccordionProps, AccordionItem } from "@nextui-org/react";
+import {
+  Accordion,
+  AccordionProps,
+  AccordionItem,
+  Chip,
+} from "@nextui-org/react";
 import { Skill } from "./Skill";
 import { LanguagesEnum } from "@/app/utils/enums.utils";
 
@@ -29,6 +34,7 @@ function Skills({}: Props) {
           value: 90,
         },
       ],
+      type: "progress",
     },
     {
       title: "Languages",
@@ -42,14 +48,15 @@ function Skills({}: Props) {
           value: 90,
         },
         {
+          label: LanguagesEnum.elixir,
+          value: 70,
+        },
+        {
           label: LanguagesEnum.java,
           value: 80,
         },
-        {
-          label: LanguagesEnum.py,
-          value: 70,
-        },
       ],
+      type: "progress",
     },
     {
       title: "Frontend Technologies",
@@ -79,6 +86,7 @@ function Skills({}: Props) {
           value: 90,
         },
       ],
+      type: "chip",
     },
     {
       title: "Backend Technologies",
@@ -113,6 +121,7 @@ function Skills({}: Props) {
           value: 90,
         },
       ],
+      type: "chip",
     },
 
     {
@@ -147,6 +156,7 @@ function Skills({}: Props) {
           value: 90,
         },
       ],
+      type: "chip",
     },
   ];
   return (
@@ -155,7 +165,7 @@ function Skills({}: Props) {
         <div className="flex w-full flex-row flex-wrap">
           {sections.map((skill, index) => {
             return (
-              <div className="w-full px-10 md:w-1/2">
+              <div key={index} className="w-full md:w-1/2">
                 <SkillsSection key={index} {...skill} />
               </div>
             );
@@ -164,16 +174,32 @@ function Skills({}: Props) {
       </div>
       <div className="flex md:hidden">
         <div className="flex w-full flex-col gap-5">
-          {sections.map((skill, index) => {
+          {sections.map((section, index) => {
             return (
-              <div className="w-full">
-                <MyAccordion title={skill.title}>
-                  <div className="flex w-full flex-row flex-wrap">
-                    {skill.skills.map((skill, index) => {
+              <div key={index} className="w-full">
+                <MyAccordion title={section.title}>
+                  <div
+                    className={`flex w-full flex-row flex-wrap ${section.type === "chip" ? "gap-2" : ""}`}
+                  >
+                    {section.skills.map((skill, index) => {
                       return (
-                        <div className="w-full sm:w-1/2">
-                          <Skill key={index} {...skill} />
-                        </div>
+                        <>
+                          {section.type === "progress" ? (
+                            <div className="w-full sm:w-1/2">
+                              <Skill key={index} {...skill} />
+                            </div>
+                          ) : (
+                            <div className="w-fit ">
+                              <Chip
+                                color="default"
+                                variant="bordered"
+                                style={{ fontSize: "10px", padding: "3px" }}
+                              >
+                                {skill.label}
+                              </Chip>
+                            </div>
+                          )}
+                        </>
                       );
                     })}
                   </div>

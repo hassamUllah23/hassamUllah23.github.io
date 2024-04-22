@@ -40,7 +40,7 @@ function Intro({}: Props) {
     TechnologiesEnum.mongo,
   ];
   return (
-    <main>
+    <div>
       <div
         className={`flex h-5/6 w-full flex-row content-center justify-center pb-10 pt-10 sm:pb-20 md:pt-36 lg:pb-60`}
       >
@@ -85,7 +85,7 @@ function Intro({}: Props) {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
 

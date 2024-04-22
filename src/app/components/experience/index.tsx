@@ -10,6 +10,7 @@ import LaptopMacIcon from "@mui/icons-material/LaptopMac";
 import Typography from "@mui/material/Typography";
 import { Element } from "react-scroll";
 import { Link } from "@nextui-org/react";
+import { LongText } from "../LongText";
 
 type Props = {};
 
@@ -17,6 +18,7 @@ type TimeLineData = {
   date: string;
   company: string;
   subtitle: string;
+  jobTitle: string;
   bullets: Array<string>;
   url: string;
 };
@@ -25,26 +27,29 @@ function Experience({}: Props) {
   const items: Array<TimeLineData> = [
     {
       date: "January 1st, 2024",
-      company: "Joined Softteams a/s",
+      company: "Softteams a/s",
       url: "http://www.softteams.com/",
       subtitle:
         "A services-based software development firm with its main focus on web development, specifically in Elixir programming language.",
       bullets: ["I learned nest", "I learned nest"],
+      jobTitle: "Full Stack Developer",
     },
     {
       date: "January 1st, 2023",
-      company: "Joined Krypto-Hive",
+      company: "Krypto-Hive",
       url: "https://kryptohive.com/",
       subtitle:
         "A services-based software development company with its primary focus around Web3 solutions, ranging from NFT Marketplace, to a Multi-Chain NFT Bridge.",
       bullets: [],
+      jobTitle: "Full Stack Developer",
     },
     {
       date: "February 1st, 2022",
-      company: "Joined Protovoid Technologies",
+      company: "Protovoid Technologies",
+      jobTitle: "MERN Stack Developer",
       url: "https://protovoid.com/",
       subtitle:
-        "A services-based software development firm with its main focus on web development, specifically in elixir.",
+        "First employment as a Full-stack developer. Also the first experience with Nextjs and Nestjs",
       bullets: [
         "Built deployment-ready back-end with Nestjs and Nodejs",
         "Learnt Docker basics to utilize containerization for CI/CD.",
@@ -58,13 +63,29 @@ function Experience({}: Props) {
       date: "March 1st, 2021",
       company: "Codegenio",
       url: "https://www.linkedin.com/company/codinggenio/about/",
-      subtitle:
-        "My first professional employment. Got to learn the importance of teamwork and trusting your peers to ensure achieving work-related milestones on time. Also learnt the importance of staying true to the standard practices in coding and overall work management.",
+      subtitle: `First professional employment, learned Angular 12 through CodeGenio training and collaboration with experienced devs. Emphasized teamwork, trust, and adherence to coding standards for timely project completion.`,
       bullets: [
         "Wrote and maintained TypeScript code for full-scale Angular projects.",
         "Learnt to utilize DevTools to maximize productivity.",
         "Learnt Angular-Marerial and Ngx-Bootstrap modules for UI.",
       ],
+      jobTitle: "Angular Developer",
+    },
+    {
+      date: "November 1st,",
+      company: "DOTLESS",
+      url: "https://www.linkedin.com/company/dotless-official/about/",
+      subtitle: `Developed native Android applications with Java using Android Studio.
+
+      - Performed requirement elicitation through one-on-one meetings with clients and personal R&D.
+      - Got hands-on experience with Firebase, Firestore, MySQL and SQLite databases.
+      - Developed reusable XML components to minimize code duplication and inconsistency.`,
+      bullets: [
+        "Wrote and maintained TypeScript code for full-scale Angular projects.",
+        "Learnt to utilize DevTools to maximize productivity.",
+        "Learnt Angular-Marerial and Ngx-Bootstrap modules for UI.",
+      ],
+      jobTitle: "Android Developer",
     },
   ];
 
@@ -85,7 +106,7 @@ function Experience({}: Props) {
                   className="p-1 md:p-5"
                 >
                   <span className="md:text-normal text-[10px] sm:text-sm">
-                    {element.date} -{" "}
+                    {/* {element.date} -{" "} */}
                     <Link
                       href={element.url}
                       target="_blank"
@@ -115,9 +136,13 @@ function Experience({}: Props) {
                   }}
                   className="w-1/2 p-1 md:p-5"
                 >
-                  <Typography className="md:text-normal w-full text-[10px] sm:text-sm md:w-2/3">
-                    {element.subtitle}
-                  </Typography>
+                  <div className="flex flex-col gap-1">
+                    <p className="text-medium font-bold">{element.jobTitle}</p>
+                    <LongText
+                      text={element.subtitle}
+                      style="md:text-normal w-full text-[10px] sm:text-sm md:w-2/3"
+                    />
+                  </div>
                 </TimelineContent>
               </TimelineItem>
             );

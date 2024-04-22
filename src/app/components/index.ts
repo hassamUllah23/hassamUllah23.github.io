@@ -10,6 +10,7 @@ import { MyTooltip } from "./Tooltip";
 import { Counts } from "./Counts";
 import { Skills } from "./Skills";
 import { Contact } from "./Contact";
+import { LongText } from "./LongText";
 
 export {
   MyNavbar,
@@ -24,4 +25,5 @@ export {
   Counts,
   Skills,
   Contact,
+  LongText,
 };

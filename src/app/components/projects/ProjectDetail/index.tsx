@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "@nextui-org/react";
-import { Slider } from "./Slider";
 import { Technologies } from "../Technologies";
 import { Project } from "@/app/utils";
+import { LongText } from "../../LongText";
 
 type Props = {
   project: Project;
@@ -25,7 +25,7 @@ function ProjectDetail({ project }: Props) {
       ) : (
         <h4 className="font-bold">{title}</h4>
       )}
-      <p>{description}</p>
+      <LongText text={description} />
       <Technologies justify="start" technologies={technologies} />
       <div className="flex flex-row flex-wrap items-center justify-start">
         {images.map((element, index) => {

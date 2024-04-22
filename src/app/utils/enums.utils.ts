@@ -1,4 +1,9 @@
 enum TechnologiesEnum {
+  elixir = "Elixir",
+  phoenix = "Phoenix",
+  liveView = "LiveView",
+  ecto = "Ecto Framework",
+  alpine = "Alpine JS",
   ts = "TypeScript",
   node = "Node.js",
   nest = "Nest.js",
@@ -53,8 +58,8 @@ enum TechnologiesEnum {
 enum LanguagesEnum {
   js = "JavaScript",
   ts = "TypeScript",
-  java = "JAVA",
-  py = "Python",
+  elixir = "Elixir",
+  java = "Java",
 }
 
 enum ThemesEnum {

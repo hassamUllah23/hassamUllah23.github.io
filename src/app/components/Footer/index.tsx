@@ -7,7 +7,7 @@ import { Contact } from "../Contact";
 import { useTheme } from "next-themes";
 import { FooterTechnologies } from "./FooterTechnologies";
 import { TfiEmail } from "react-icons/tfi";
-import { whatsAppButton } from "@/app/services/assets.service";
+import { calendly, whatsAppButton } from "@/app/services/assets.service";
 import { MdPhone } from "react-icons/md";
 
 type Props = {};
@@ -20,10 +20,17 @@ function Footer({}: Props) {
           <Contact />
         </div>
         <div className="flex w-full flex-col items-center md:w-1/3">
-          <div className="h-min w-full py-5">
+          <div className="h-min w-full">
             <Connections />
           </div>
           <div className="flex w-full flex-col items-center gap-5 md:items-start">
+            <Link href="https://calendly.com/hassamullah/30min" target="_blank">
+              <div className="flex w-fit flex-row items-center justify-center gap-3 rounded-lg bg-white/10 p-2 md:justify-start">
+                <img src={calendly.src} width={35} height={"auto"} alt="" />
+                <p className="text-sm font-bold">Setup a meeting</p>
+              </div>
+            </Link>
+
             <div className="flex w-full flex-row justify-center md:justify-start">
               <Link href="https://wa.me/+923105187828" target="_blank">
                 <img src={whatsAppButton.src} alt="" />

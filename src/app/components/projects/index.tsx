@@ -4,8 +4,15 @@ import {
   df1,
   df2,
   dfiance,
-  fahwa,
-  telegram,
+  fahwa1,
+  fahwa2,
+  fahwa3,
+  fahwa4,
+  fahwa5,
+  fahwa6,
+  fahwa7,
+  fahwa8,
+  fahwa9,
   tg1,
   tg2,
   tg3,
@@ -17,6 +24,12 @@ import {
   xpr2,
   xpr3,
   xpr4,
+  esg1,
+  esg2,
+  esg3,
+  esg4,
+  esg5,
+  esg6,
 } from "@/app/services/assets.service";
 import { Project, TechnologiesEnum } from "@/app/utils";
 import { Element } from "react-scroll";
@@ -26,9 +39,39 @@ type Props = {};
 export function Projects({}: Props) {
   const projects: Array<Project> = [
     {
+      title: "E-SG Cloud",
+      subtitle: "A financial reporting solution for enterprise organizations.",
+      description: `E-SG Cloud is an E-S-G(Environmental Social & Governmental) reporting solution based on reporting standards defined by EFRAG (European Financial Reporting Advisory Group), an organisation that is responsible for ensuring that International Financial Reporting Standards are responsive to European needs and concerns.
+
+      It makes it easy for you to follow EU standards and handle the complexity of ESG-reporting by giving you a central platform to align the ESG reporting process and store documentation, enabling you to stay ahead of reporting requirements with accurate data ready for audit and your customers.
+      
+      Visit the website https://app.e-sg.cloud/ or Book a demo at https://e-sg.cloud/`,
+      cover: esg1.src,
+      url: "https://app.e-sg.cloud/",
+      technologies: [
+        TechnologiesEnum.elixir,
+        TechnologiesEnum.phoenix,
+        TechnologiesEnum.liveView,
+        TechnologiesEnum.ecto,
+        TechnologiesEnum.alpine,
+        TechnologiesEnum.tailwind,
+        TechnologiesEnum.psql,
+      ],
+      primaryTechnologies: [
+        TechnologiesEnum.elixir,
+        TechnologiesEnum.phoenix,
+        TechnologiesEnum.psql,
+      ],
+      images: [esg1.src, esg2.src, esg3.src, esg4.src, esg5.src, esg6.src],
+    },
+    {
       title: "XP-Bridge",
       subtitle: "A cross-chain NFT bridge",
-      description: "description here",
+      description: `XP-Network Cross-Chain NFT Bridge is the world's most powerful Cross-Chain NFT Bridge with the largest list of supported Blockchains and Wallets. It enables users to transfer NFTs between a number of EVM and Non-EVM blockchains through a user-friendly UI developed with React and Node.js. 
+
+      It supports a number of vastly adopted chains like Ethereum, Solana, Algorand, Tron, Aptos, VeChain etc. It also supports a number of vastly adopted Web3 wallets like MetaMask, Phantom Temple Wallet, AlgoSigner, TronLink etc, to enable users to easily connect to their concerned wallet and transfer NFTs.
+      
+      Visit the website at https://bridge.xp.network/ or view the documentation at https://docs.xp.network/`,
       cover: xp_bridge_1.src,
       url: "https://explorer.xp.network/",
       technologies: [
@@ -128,10 +171,13 @@ export function Projects({}: Props) {
 
     {
       title: "Fahwa.io",
-      subtitle: "AI-based content creation tool.",
-      description:
-        "A content generation tool for Arabic and English language, useful for creating a wide range of content ranging from LinkedIn post, emails, Instagram post captions, Twitter threads etc.",
-      cover: fahwa.src,
+      subtitle: "AI-based Arabic and English content creation tool.",
+      description: `A content generation tool for Arabic and English language, useful for creating a wide range of content ranging from LinkedIn post, emails, Instagram post captions, Twitter threads etc.
+        
+        Features include Content generation, Spell checking, Paraphrasing etc.
+        
+        Also, the ChatGPT HTTP API integrated in it allows users to utilize the full power of ChatGPT inside our application.`,
+      cover: fahwa1.src,
       url: "https://fahwa.io/",
       technologies: [
         TechnologiesEnum.nest,
@@ -144,7 +190,17 @@ export function Projects({}: Props) {
         TechnologiesEnum.node,
         TechnologiesEnum.mongo,
       ],
-      images: [fahwa.src],
+      images: [
+        fahwa1.src,
+        fahwa2.src,
+        fahwa3.src,
+        fahwa4.src,
+        fahwa5.src,
+        fahwa6.src,
+        fahwa7.src,
+        fahwa8.src,
+        fahwa9.src,
+      ],
     },
 
     {
