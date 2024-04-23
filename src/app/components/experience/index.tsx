@@ -75,11 +75,7 @@ function Experience({}: Props) {
       date: "November 1st,",
       company: "DOTLESS",
       url: "https://www.linkedin.com/company/dotless-official/about/",
-      subtitle: `Developed native Android applications with Java using Android Studio.
-
-      - Performed requirement elicitation through one-on-one meetings with clients and personal R&D.
-      - Got hands-on experience with Firebase, Firestore, MySQL and SQLite databases.
-      - Developed reusable XML components to minimize code duplication and inconsistency.`,
+      subtitle: `Developed native Android applications with Java using Android Studio. Contributed to the development of high-quality Android applications from concept to deployment. Participated in the full software development lifecycle, including requirement analysis, design, coding, testing and debugging of Java based android applications, collaborating closely with senior developers, designers, and product manager.`,
       bullets: [
         "Wrote and maintained TypeScript code for full-scale Angular projects.",
         "Learnt to utilize DevTools to maximize productivity.",

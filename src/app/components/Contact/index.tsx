@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Input, Textarea } from "@nextui-org/react";
 import { useForm } from "react-hook-form";
 import { Element } from "react-scroll";
+// import { MailService, Config } from "@/services/index";
 
 type Props = {};
 
@@ -19,8 +20,15 @@ function Contact({}: Props) {
     },
   });
 
-  const onSubmit = (_data: any) => {
+  const onSubmit = async (_data: any) => {
     openEmailClient();
+    // console.log({ data });
+    // await MailService.sendEmail({
+    //   to: Config.mailConfig.from,
+    //   text: data.message as string,
+    //   // html: "",
+    //   subject: data.subject as string,
+    // });
   };
 
   const emailRegister = register("email", {
@@ -35,9 +43,13 @@ function Contact({}: Props) {
     required: true,
   });
 
+  const subjectRegister = register("subject", {
+    required: true,
+  });
+
   const openEmailClient = () => {
     window.location.href = `mailto:${encodeURIComponent(
-      "malikhassamullah1@yahoo.com",
+      "malikhassamullah1@gmail.com",
     )}`;
   };
 
@@ -71,6 +83,7 @@ function Contact({}: Props) {
                 onClear={() => console.log("clear")}
                 validationState={errors.email ? "invalid" : "valid"}
                 style={{ backgroundColor: "black" }}
+                {...subjectRegister}
               />
             </div>
 

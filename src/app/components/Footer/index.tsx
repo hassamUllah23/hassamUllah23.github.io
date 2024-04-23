@@ -45,7 +45,7 @@ function Footer({}: Props) {
             <div className="flex w-fit flex-row items-center justify-start gap-5">
               <TfiEmail color="white" size={"20px"} />
               <p className="md:text-normal text-tiny sm:text-sm">
-                malikhassamullah1@yahoo.com
+                malikhassamullah1@gmail.com
               </p>
             </div>
           </div>

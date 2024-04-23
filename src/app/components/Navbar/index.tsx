@@ -9,17 +9,14 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from "@nextui-org/react";
-import { Sacramento } from "next/font/google";
+import { Orbitron } from "next/font/google";
 import { Scroll } from "../Scroll";
 import { animateScroll as scroll } from "react-scroll";
 import { calendly } from "@/app/services/assets.service";
 import { MyTooltip } from "../Tooltip";
 // import { ThemeSelector } from "../ThemeSelector";
 
-const sacremento = Sacramento({
-  weight: "400",
-  subsets: ["latin"],
-});
+const orbitron = Orbitron({ weight: "400", subsets: ["latin"] });
 
 function MyNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,8 +50,8 @@ function MyNavbar() {
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         className="sm:hidden"
       />
-      <NavbarBrand className={`${sacremento.className}`}>
-        <h1 className="font-bold">Hassam Ullah</h1>
+      <NavbarBrand className={`${orbitron.className}`}>
+        <h1 className="capitalize">Hassam Ullah</h1>
       </NavbarBrand>
       <NavbarContent className="hidden flex-1 sm:flex" justify="center">
         {menuItems.map((element, index) => {
