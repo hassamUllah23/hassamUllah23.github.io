@@ -4,8 +4,9 @@ import { ProjectDetail } from "../ProjectDetail";
 import { Technologies } from "../Technologies";
 import { Popup } from "../..";
 import { Project } from "@/app/utils";
+import { withTooltip } from "../../HOCs";
 
-export function ProjectItem(project: Project) {
+function ProjectItem(project: Project) {
   const { title, subtitle, cover, primaryTechnologies } = project;
 
   return (
@@ -35,3 +36,6 @@ export function ProjectItem(project: Project) {
     </Popup>
   );
 }
+
+const WrappedProjectItem = withTooltip(ProjectItem);
+export { WrappedProjectItem };

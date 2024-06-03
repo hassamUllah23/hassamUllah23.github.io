@@ -1,5 +1,5 @@
 import React from "react";
-import { ProjectItem } from "./ProjectItem";
+import { WrappedProjectItem as ProjectItem } from "./ProjectItem";
 import {
   df1,
   df2,
@@ -235,7 +235,11 @@ export function Projects({}: Props) {
         {projects.map((project, index) => {
           return (
             <div className="w-full sm:w-1/3 md:w-1/4">
-              <ProjectItem key={index} {...project} />
+              <ProjectItem
+                key={index}
+                {...project}
+                tooltipText={project.subtitle}
+              />
             </div>
           );
         })}
