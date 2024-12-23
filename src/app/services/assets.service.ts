@@ -43,6 +43,10 @@ import esg11 from "../assets/esg-11.png";
 import esg12 from "../assets/esg-12.png";
 import esg13 from "../assets/esg-13.png";
 import esg14 from "../assets/esg-14.png";
+import dropp1 from "../assets/dropp-1.png";
+import dropp2 from "../assets/dropp-2.png";
+import dropp3 from "../assets/dropp-3.png";
+
 import calendly from "../assets/calendly-logo.webp";
 
 export {
@@ -91,5 +95,8 @@ export {
   esg12,
   esg13,
   esg14,
+  dropp1,
+  dropp2,
+  dropp3,
   calendly,
 };

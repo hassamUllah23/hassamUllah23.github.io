@@ -4,6 +4,7 @@ enum TechnologiesEnum {
   liveView = "LiveView",
   ecto = "Ecto Framework",
   alpine = "Alpine JS",
+  microservices = " Microservices",
   ts = "TypeScript",
   node = "Node.js",
   nest = "Nest.js",
@@ -11,6 +12,7 @@ enum TechnologiesEnum {
   react = "React",
   mongo = "MongoDB",
   docker = "Docker",
+  kubernetes = "Kubernetes",
   typeOrm = "TypeORM",
   mongoose = "Mongoose",
   psql = "PostgreSQL",
@@ -53,6 +55,12 @@ enum TechnologiesEnum {
   chrono = "React-Chrono",
   scroll = "React-Scroll",
   forms = "React-Hook-Form",
+  ai = "AI",
+  rabbitmq = "RabbitMQ",
+  bullmq = "BullMQ",
+  kafka = "Kafka",
+  redis = "Redis",
+  airflow = "Apache Airflow",
 }
 
 enum LanguagesEnum {

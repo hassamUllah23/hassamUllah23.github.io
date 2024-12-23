@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { WrappedProjectItem as ProjectItem } from "./ProjectItem";
 import {
   df1,
@@ -30,14 +30,60 @@ import {
   esg4,
   esg5,
   esg6,
+  dropp3,
+  dropp2,
+  dropp1,
 } from "@/app/services/assets.service";
 import { Project, TechnologiesEnum } from "@/app/utils";
 import { Element } from "react-scroll";
+import {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  Card,
+  CardHeader,
+  Button,
+  CardBody,
+  ModalFooter,
+  useDisclosure,
+} from "@nextui-org/react";
+import { title } from "process";
+import { Technologies } from "./Technologies";
+import { Slider } from "./ProjectDetail/Slider";
 
 type Props = {};
 
 export function Projects({}: Props) {
   const projects: Array<Project> = [
+    {
+      title: "dropp.inc",
+      subtitle: "An AI Generation Platform.",
+      description: `Dropp, a GenAI platform that allows users to generate content using AI seemlessly seamless with affordable AI/Web3 capabilities.       
+      
+      You can even earn dropp coins by completing easy tasks and climb up the weekly Leaderboards to win Solana NFTs. 
+      
+      Visit the website https://www.dropp.inc/ for more details.`,
+      cover: dropp2.src,
+      url: "https://www.dropp.inc/",
+      technologies: [
+        TechnologiesEnum.docker,
+        TechnologiesEnum.kubernetes,
+        TechnologiesEnum.next,
+        TechnologiesEnum.nest,
+        TechnologiesEnum.microservices,
+        TechnologiesEnum.rabbitmq,
+        TechnologiesEnum.kafka,
+        TechnologiesEnum.bullmq,
+      ],
+      primaryTechnologies: [
+        TechnologiesEnum.ai,
+        TechnologiesEnum.next,
+        TechnologiesEnum.nest,
+        TechnologiesEnum.mongo,
+      ],
+      images: [dropp1.src, dropp2.src, dropp3.src],
+    },
     {
       title: "E-SG Cloud",
       subtitle: "A financial reporting solution for enterprise organizations.",
@@ -226,6 +272,13 @@ export function Projects({}: Props) {
     },
   ];
 
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  const handleSelect = (project: Project) => {
+    setSelectedProject(() => project);
+  };
+
   return (
     <Element name="projects">
       <div
@@ -234,7 +287,13 @@ export function Projects({}: Props) {
       >
         {projects.map((project, index) => {
           return (
-            <div className="w-full sm:w-1/3 md:w-1/4">
+            <div
+              className="w-full sm:w-1/3 md:w-1/4"
+              onClick={() => {
+                handleSelect(project);
+                onOpen();
+              }}
+            >
               <ProjectItem
                 key={index}
                 {...project}
@@ -243,6 +302,63 @@ export function Projects({}: Props) {
             </div>
           );
         })}
+
+        <Modal isOpen={isOpen} size={"3xl"} onClose={onClose}>
+          <ModalContent>
+            {(onClose) => (
+              <>
+                <ModalHeader className="flex flex-col gap-1">
+                  {selectedProject?.title}
+                </ModalHeader>
+                <ModalBody>
+                  {selectedProject && (
+                    <div className="flex w-full flex-row gap-x-2">
+                      <div className="w-1/3">
+                        <Technologies
+                          justify="start"
+                          technologies={selectedProject?.primaryTechnologies}
+                        />
+                        {/* <h4 className="w-full overflow-y-hidden truncate whitespace-nowrap py-3 text-tiny">
+                          {selectedProject?.description}
+                        </h4> */}
+                        <p className="pt-4 text-small">
+                          {selectedProject?.description}
+                        </p>{" "}
+                      </div>
+                      <div className="w-2/3">
+                        <Slider images={selectedProject?.images} />
+                      </div>
+                    </div>
+
+                    // <Card className="h-full min-h-full w-full bg-stone-950 p-1 py-4 shadow">
+                    //   <CardHeader className="flex-col items-start px-4 pb-0 pt-2">
+                    //     <h4 className="text-lg font-bold uppercase">
+                    //       {selectedProject?.title}
+                    //     </h4>
+                    //     <Technologies
+                    //       justify="start"
+                    //       technologies={selectedProject?.primaryTechnologies}
+                    //     />
+                    //     <h4 className="w-full overflow-y-hidden truncate whitespace-nowrap py-3 text-tiny">
+                    //       {selectedProject?.subtitle}
+                    //     </h4>
+                    //   </CardHeader>
+                    //   <CardBody className="w-full overflow-visible py-2 brightness-90">
+                    //     {/* <Image
+                    //   alt="Card background"
+                    //   src={cover}
+                    //   width={"100%"}
+                    //   className="w-full rounded-xl object-cover "
+                    //   style={{ maxHeight: "100px", width: "100%" }}
+                    // /> */}
+                    //   </CardBody>
+                    // </Card>
+                  )}
+                </ModalBody>
+              </>
+            )}
+          </ModalContent>
+        </Modal>
       </div>
     </Element>
   );
