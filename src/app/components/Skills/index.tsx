@@ -176,7 +176,7 @@ function Skills({}: Props) {
         <div className="flex w-full flex-col gap-5">
           {sections.map((section, index) => {
             return (
-              <div key={index} className="w-full">
+              <div key={index} className="w-full bg-red-300">
                 <MyAccordion title={section.title}>
                   <div
                     className={`flex w-full flex-row flex-wrap ${section.type === "chip" ? "gap-2" : ""}`}

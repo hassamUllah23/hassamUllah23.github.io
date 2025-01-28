@@ -11,6 +11,21 @@ import Typography from "@mui/material/Typography";
 import { Element } from "react-scroll";
 import { Link } from "@nextui-org/react";
 import { LongText } from "../LongText";
+import {
+  // softteams1,
+  solutions1,
+  solutions2,
+} from "@/app/services/assets.service";
+
+import {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Button,
+} from "@nextui-org/react";
+import { Album } from "../Swiper";
 
 type Props = {};
 
@@ -21,21 +36,34 @@ type TimeLineData = {
   jobTitle: string;
   bullets: Array<string>;
   url: string;
+  pictures?: Array<any>;
 };
 
 function Experience({}: Props) {
-  const items: Array<TimeLineData> = [
+  // const { isOpen, onOpen, onClose } = useDisclosure();
+  const jobs: Array<TimeLineData> = [
     {
-      date: "January 1st, 2024",
-      company: "Softteams a/s",
-      url: "http://www.softteams.com/",
+      date: "April, 2024",
+      company: "Solutionsloft",
+      url: "https://www.solutionsloft.com/",
       subtitle:
-        "A services-based software development firm with its main focus on web development, specifically in Elixir programming language.",
+        "A services-based software development firm focusing on AI-driven solutions in Web and Mobile Apps Development.",
       bullets: ["I learned nest", "I learned nest"],
       jobTitle: "Full Stack Developer",
+      pictures: [solutions1.src, solutions2.src],
     },
+    // {
+    //   date: "January 1st, 2024",
+    //   company: "Softteams a/s",
+    //   url: "http://www.softteams.com/",
+    //   subtitle:
+    //     "A services-based software development firm with its main focus on web development, specifically in Elixir programming language.",
+    //   bullets: ["I learned nest", "I learned nest"],
+    //   jobTitle: "Full Stack Developer",
+    //   pictures: [softteams1.src],
+    // },
     {
-      date: "January 1st, 2023",
+      date: "January, 2023",
       company: "Krypto-Hive",
       url: "https://kryptohive.com/",
       subtitle:
@@ -44,7 +72,7 @@ function Experience({}: Props) {
       jobTitle: "Full Stack Developer",
     },
     {
-      date: "February 1st, 2022",
+      date: "February, 2021",
       company: "Protovoid Technologies",
       jobTitle: "MERN Stack Developer",
       url: "https://protovoid.com/",
@@ -59,37 +87,37 @@ function Experience({}: Props) {
         "Learnt AWS S3 service for file storage.",
       ],
     },
-    {
-      date: "March 1st, 2021",
-      company: "Codegenio",
-      url: "https://www.linkedin.com/company/codinggenio/about/",
-      subtitle: `First professional employment, learned Angular 12 through CodeGenio training and collaboration with experienced devs. Emphasized teamwork, trust, and adherence to coding standards for timely project completion.`,
-      bullets: [
-        "Wrote and maintained TypeScript code for full-scale Angular projects.",
-        "Learnt to utilize DevTools to maximize productivity.",
-        "Learnt Angular-Marerial and Ngx-Bootstrap modules for UI.",
-      ],
-      jobTitle: "Angular Developer",
-    },
-    {
-      date: "November 1st,",
-      company: "DOTLESS",
-      url: "https://www.linkedin.com/company/dotless-official/about/",
-      subtitle: `Developed native Android applications with Java using Android Studio. Contributed to the development of high-quality Android applications from concept to deployment. Participated in the full software development lifecycle, including requirement analysis, design, coding, testing and debugging of Java based android applications, collaborating closely with senior developers, designers, and product manager.`,
-      bullets: [
-        "Wrote and maintained TypeScript code for full-scale Angular projects.",
-        "Learnt to utilize DevTools to maximize productivity.",
-        "Learnt Angular-Marerial and Ngx-Bootstrap modules for UI.",
-      ],
-      jobTitle: "Android Developer",
-    },
+    // {
+    //   date: "March 1st, 2021",
+    //   company: "Codegenio",
+    //   url: "https://www.linkedin.com/company/codinggenio/about/",
+    //   subtitle: `First professional employment, learned Angular 12 through CodeGenio training and collaboration with experienced devs. Emphasized teamwork, trust, and adherence to coding standards for timely project completion.`,
+    //   bullets: [
+    //     "Wrote and maintained TypeScript code for full-scale Angular projects.",
+    //     "Learnt to utilize DevTools to maximize productivity.",
+    //     "Learnt Angular-Marerial and Ngx-Bootstrap modules for UI.",
+    //   ],
+    //   jobTitle: "Angular Developer",
+    // },
+    // {
+    //   date: "November 1st,",
+    //   company: "DOTLESS",
+    //   url: "https://www.linkedin.com/company/dotless-official/about/",
+    //   subtitle: `Developed native Android applications with Java using Android Studio. Contributed to the development of high-quality Android applications from concept to deployment. Participated in the full software development lifecycle, including requirement analysis, design, coding, testing and debugging of Java based android applications, collaborating closely with senior developers, designers, and product manager.`,
+    //   bullets: [
+    //     "Wrote and maintained TypeScript code for full-scale Angular projects.",
+    //     "Learnt to utilize DevTools to maximize productivity.",
+    //     "Learnt Angular-Marerial and Ngx-Bootstrap modules for UI.",
+    //   ],
+    //   jobTitle: "Android Developer",
+    // },
   ];
 
   return (
     <div id="experience">
       <Element name="experience">
         <Timeline position="right">
-          {items.map((element, index) => {
+          {jobs.map((element, index) => {
             return (
               <TimelineItem key={index}>
                 <TimelineOppositeContent
@@ -108,7 +136,7 @@ function Experience({}: Props) {
                       target="_blank"
                       isExternal
                       showAnchorIcon
-                      className="md:text-normal text-[10px] sm:text-sm"
+                      className="md:text-normal text-[10px] sm:text-sm lg:text-lg"
                     >
                       {element.company}
                     </Link>
@@ -138,6 +166,16 @@ function Experience({}: Props) {
                       text={element.subtitle}
                       style="md:text-normal w-full text-[10px] sm:text-sm md:w-2/3"
                     />
+                    <div className="mt-2 flex w-full flex-row flex-wrap gap-3">
+                      {element.pictures?.map((element, index) => (
+                        <img
+                          key={index}
+                          src={element}
+                          className="h-[80px] w-min cursor-pointer rounded-md"
+                          style={{ objectFit: "contain" }}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </TimelineContent>
               </TimelineItem>
@@ -146,6 +184,38 @@ function Experience({}: Props) {
         </Timeline>
       </Element>
     </div>
+  );
+}
+
+function AlbumX({
+  isOpen,
+  onClose,
+  pictures,
+}: {
+  pictures: Array<any>;
+  isOpen: boolean;
+  onClose: any;
+}) {
+  return (
+    <Modal isOpen={isOpen} size={"full"} onClose={onClose}>
+      <ModalContent>
+        {(onClose) => (
+          <>
+            <ModalHeader className="flex flex-col gap-1">
+              Work Memories
+            </ModalHeader>
+            <ModalBody>
+              <Album images={pictures} swiperProps={{ slidesPerView: 3 }} />
+            </ModalBody>
+            <ModalFooter>
+              <Button color="danger" variant="light" onPress={onClose}>
+                Close
+              </Button>
+            </ModalFooter>
+          </>
+        )}
+      </ModalContent>
+    </Modal>
   );
 }
 

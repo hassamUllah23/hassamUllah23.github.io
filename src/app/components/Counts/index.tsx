@@ -16,12 +16,12 @@ function Counts({}: Props) {
     },
     {
       duration: 2000,
-      limit: 3,
+      limit: 4,
       title: "Years",
     },
     {
       duration: 2000,
-      limit: 2,
+      limit: 1,
       title: "Dev Stacks",
     },
   ];

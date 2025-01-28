@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { WrappedProjectItem as ProjectItem } from "./ProjectItem";
 import {
@@ -303,7 +304,7 @@ export function Projects({}: Props) {
           );
         })}
 
-        <Modal isOpen={isOpen} size={"3xl"} onClose={onClose}>
+        <Modal isOpen={isOpen} size={"4xl"} onClose={onClose}>
           <ModalContent>
             {(onClose) => (
               <>
@@ -312,8 +313,8 @@ export function Projects({}: Props) {
                 </ModalHeader>
                 <ModalBody>
                   {selectedProject && (
-                    <div className="flex w-full flex-row gap-x-2">
-                      <div className="w-1/3">
+                    <div className="flex w-full flex-col gap-x-2">
+                      <div className="w-full pb-5">
                         <Technologies
                           justify="start"
                           technologies={selectedProject?.primaryTechnologies}
@@ -325,8 +326,11 @@ export function Projects({}: Props) {
                           {selectedProject?.description}
                         </p>{" "}
                       </div>
-                      <div className="w-2/3">
-                        <Slider images={selectedProject?.images} />
+                      <div className="max-h[500px] w-full">
+                        <Slider
+                          images={selectedProject?.images}
+                          maxHeight={500}
+                        />
                       </div>
                     </div>
 

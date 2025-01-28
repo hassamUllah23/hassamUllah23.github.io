@@ -12,7 +12,7 @@ function ProjectDetail({ project }: Props) {
   const { title, description, url, images, technologies } = project;
 
   return (
-    <div className="flex w-[400px] max-w-full flex-col gap-y-3 px-2 py-3">
+    <div className="flex w-[400px] max-w-full flex-row gap-y-3 px-2 py-3">
       {url && url?.length > 0 ? (
         <Link
           className="m-0 p-0 font-bold"
@@ -34,6 +34,7 @@ function ProjectDetail({ project }: Props) {
               <img
                 key={index}
                 src={element}
+                style={{ maxHeight: 500 }}
                 className="h-full rounded border border-gray-600"
               />
             </div>

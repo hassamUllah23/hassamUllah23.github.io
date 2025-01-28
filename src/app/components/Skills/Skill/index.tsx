@@ -1,6 +1,6 @@
 import { Progress } from "@nextui-org/react";
 import { useTheme } from "next-themes";
-import React, { useEffect } from "react";
+import React from "react";
 
 type SkillProps = {
   label: string;
@@ -10,7 +10,7 @@ type SkillProps = {
 function Skill({ label, value }: SkillProps) {
   const { theme } = useTheme();
 
-  useEffect(() => {}, [theme]);
+  // useEffect(() => {}, [theme]);
   return (
     <Progress
       color="default"

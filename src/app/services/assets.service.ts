@@ -46,6 +46,9 @@ import esg14 from "../assets/esg-14.png";
 import dropp1 from "../assets/dropp-1.png";
 import dropp2 from "../assets/dropp-2.png";
 import dropp3 from "../assets/dropp-3.png";
+import solutions1 from "../assets/solutions1.jpg";
+import solutions2 from "../assets/solutions2.jpg";
+import softteams1 from "../assets/softteams1.jpg";
 
 import calendly from "../assets/calendly-logo.webp";
 
@@ -99,4 +102,7 @@ export {
   dropp2,
   dropp3,
   calendly,
+  solutions1,
+  solutions2,
+  softteams1,
 };

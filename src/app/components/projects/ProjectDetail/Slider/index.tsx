@@ -7,11 +7,13 @@ import { useDisclosure } from "@nextui-org/react";
 
 type Props = {
   images: Array<string>;
+  maxHeight?: number;
 };
 
-const Slider = ({ images }: Props) => {
+const Slider = ({ images, maxHeight }: Props) => {
   return (
     <Swiper
+      style={{ maxHeight: maxHeight }}
       spaceBetween={30}
       centeredSlides={true}
       autoplay={{
@@ -33,7 +35,7 @@ const Slider = ({ images }: Props) => {
               alt="image"
               width={"100%"}
               height={"auto"}
-              // className="w-[100px]"
+              className={maxHeight ? `max-h-[${maxHeight}px]` : ""}
               style={{
                 borderRadius: "10px",
               }}

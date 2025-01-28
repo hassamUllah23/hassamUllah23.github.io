@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import { Gulzar, Orbitron } from "next/font/google";
 import { Snippet } from "@nextui-org/react";
@@ -42,7 +43,7 @@ function Intro({}: Props) {
   return (
     <div>
       <div
-        className={`flex h-5/6 w-full flex-row content-center justify-center pb-10 pt-10 sm:pb-20 md:pt-36 lg:pb-60`}
+        className={`flex h-5/6 w-full flex-row content-center justify-center pb-10 pt-10 sm:pb-20 md:pt-36 lg:pb-56`}
       >
         <div className="flex w-full flex-col content-center justify-center">
           <div className="flex flex-row justify-center pb-10">
